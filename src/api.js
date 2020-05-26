@@ -1,6 +1,5 @@
 import axios from 'axios';
-const baseURL = 'http://localhost:3000/api';
-
+const baseURL = 'https://server.goquest.online/api';
 
 export const accessCode = (code) => axios({
     method: 'POST',
@@ -8,7 +7,7 @@ export const accessCode = (code) => axios({
     headers: {
         'Content-Type': 'application/json',
     },
-    data:{
-        code
+    data: {
+        code: code,
     }
 });
