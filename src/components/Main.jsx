@@ -1,7 +1,8 @@
 import React from 'react';
+import { redirect_url } from "../variables";
 
 const Main = () => {
-    const href = "https://oauth.vk.com/authorize?client_id=7484844&display=page&redirect_uri=http://192.168.43.106:3000/register&response_type=code&v=5.107";
+    const href = `https://oauth.vk.com/authorize?client_id=7484844&display=page&redirect_uri=${redirect_url}&response_type=code&v=5.107`;
     return (
         <div className="App">
             <a href={href}>

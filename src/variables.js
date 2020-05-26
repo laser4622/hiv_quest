@@ -1,0 +1,1 @@
+export const redirect_url = process.env.REACT_APP_REDIRECT_URL || 'http://192.168.43.106:3000/register'
