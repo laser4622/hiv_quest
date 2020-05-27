@@ -9,6 +9,7 @@ const Register = (props) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [_id, setId] = useState('');
+    const [privacy, setPrivacy] = useState(false);
     if (code && !firstName && !lastName) accessCode(code, redirect_url).then((res, err)=> {
         if(res) {
             setFirstName(res.data.firstName);
@@ -20,17 +21,31 @@ const Register = (props) => {
     return (
         <div className="register-form">
             <form method="POST" action={baseURL + '/core/register'}>
-                <label style={{display: 'none'}}>vkID <input defaultValue={_id} name="_id"/></label><br/>
-                <label>Имя <input defaultValue={firstName} name="firstName" required/></label><br/>
-                <label>Фамилия <input defaultValue={lastName} name="lastName" required/></label><br/>
-                <label>Город <input name="city" required/></label><br/>
-                <label>Школа <input name="school" required/></label><br/>
-                <label>Класс <input name="classroom" required/></label><br/>
-                <label>Телефон <input name="phone" required/></label><br/>
-                <button type="submit">
-                    Отправить
+                <span className="register-form__data-protect" >Ваши данные надежно защищены</span>
+                <input style={{display: 'none'}} defaultValue={_id} name="_id"/>
+                <input placeholder="Имя" autoComplete="none" defaultValue={firstName} name="firstName" required/>
+                <input placeholder="Фамилия" autoComplete="none" defaultValue={lastName} name="lastName" required/>
+                <input placeholder="Город" autoComplete="none" name="city" required/>
+                <input placeholder="Школа" autoComplete="none" name="school" required/>
+                <input placeholder="Класс" autoComplete="none" name="classroom" required/>
+                <input placeholder="Номер телефона" autoComplete="none" name="phone" required/>
+
+                <input onChange={()=>setPrivacy(!privacy)} type="checkbox" name="fruit"/> <text className="register-form_policy_accept-text">Согласен с обрабокой и хранением персональных данных <br/></text>
+
+                <button disabled={!privacy} type="submit">
+                    Регистрация
                 </button>
             </form>
+            <div className="register-form__data_warning">
+                <span className="register-form__data_warning-attention">Будьте внимательны!</span>
+                <br/>
+                <br/>
+                При регистрации с некорректными данными, вы не сможете получить приз.
+                <br/>
+                <br/>
+                Мы пришлём вам всего 2 СМС. Первую - о том, что квест начался, вторую - если вы займёте призовое место. После окончания квеста все данные будут уничтожены.
+
+            </div>
         </div>
     );
 }
