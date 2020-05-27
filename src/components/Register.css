@@ -1,18 +1,132 @@
 .register-form {
-    width: 250px;
+    width: 100vw;
+    margin-top: 7%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
 }
 
-.register-form label {
+
+.register-form > form {
+    padding: 100px;
+    width: 80%;
+}
+
+.register-form__data-protect {
+    font-family: Comfortaa, "Manjari Regular", serif;
+    display: block;
+    color: #009918;
+    text-align: center;
     width: 100%;
-    float: left;
-    margin-bottom: 10px;
+    font-size: 40pt;
+    margin-bottom: 30px;
+}
+
+.register-form input:focus {
+    outline: none;
 }
 
 .register-form input {
+    padding-left: 5px;
+    margin-bottom: 25px;
+    font-family: Comfortaa, "Manjari Regular", serif;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 40pt;
     float: right;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.register-form input[type="checkbox"] {
+    padding-left: 0;
+    margin-bottom: 0;
+    float: initial;
+    width: 30px;
+    height: 30px;
 }
 
 .register-form button {
+    font-family: Comfortaa, "Manjari Regular", serif;
+    font-size: 36px;
+    color: white;
+    width: 400px;
+    height: 85px;
     float: right;
+    background: #000000;
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.register-form button:hover{
+    cursor: pointer;
+    background: #555555;
+}
+
+.register-form__data_warning {
+    padding: 100px;
+    font-family: Comfortaa, "Manjari Regular", serif;
+    width: 80%;
+    font-size: 36px;
+    text-align: left;
+}
+
+.register-form__data_warning-attention {
+    color: #960000
+}
+
+.register-form_policy_accept-text {
+    font-size: 25pt
+}
+
+
+@media (max-width: 450px) {
+    .register-form__data_warning {
+        font-family: Comfortaa, "Manjari Regular", serif;
+        width: 80%;
+        font-size: 12px;
+        padding: 0;
+        margin-top: 25px;
+        text-align: left;
+    }
+
+    .register-form_policy_accept-text {
+        font-size: 12pt
+    }
+
+    .register-form input[type="checkbox"] {
+        margin-bottom: 0;
+        float: initial;
+        width: 15px;
+        height: 15px;
+    }
+
+    .register-form button {
+        margin-top: 15px;
+        font-size: 20px;
+        color: white;
+        width: 200px;
+        height: 60px;
+        float: right;
+        background: #000000;
+        box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+    }
+    .register-form input {
+        margin-bottom: 10px;
+        font-size: 14pt;
+        float: right;
+        width: 100%;
+        height: 30px;
+    }
+    .register-form__data-protect {
+        font-size: 16pt;
+    }
+    .register-form > form {
+        padding: 0;
+        width: 80%;
+    }
+    .register-form {
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
 }
