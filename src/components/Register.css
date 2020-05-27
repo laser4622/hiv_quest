@@ -47,6 +47,7 @@
 }
 
 .register-form button {
+    border: none;
     font-family: Comfortaa, "Manjari Regular", serif;
     font-size: 36px;
     color: white;
@@ -55,6 +56,17 @@
     float: right;
     background: #000000;
     box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.register-form button:disabled{
+    border: none;
+    box-shadow: none;
+    background: #a3a3a3;
+}
+
+.register-form button:disabled:hover{
+    cursor: initial;
+    background: #a3a3a3;
 }
 
 .register-form button:hover{
