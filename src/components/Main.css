@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: local('Comfortaa'), url(/public/Comfortaa.ttf) format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.main-container {
+}
+
+.main-container__header {
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    background: #6FB2BC;
+}
+
+
+.main-container__header > div {
+    min-width: 50%;
+    color: white;
+    text-align: center;
+}
+
+.main-container__header-image {
+}
+
+.main-container__header-invite {
+    font-family: Comfortaa, "Manjari Regular", serif;
+    white-space: nowrap;
+    font-size: 5em;
+}
+
+.main-container__register_button {
+    border: white solid 5px;
+    font-size: 0.5em;
+    margin-top: 5vh;
+    background: #5ae85a;
+    width: 700px;
+    height: 150px;
+}
+
+.main-container__middle-block {
+    padding: 100px;
+    font-size: 64pt;
+    font-family: Comfortaa, "Manjari Regular", serif;
+    color:black;
+    text-align: center;
+}
+
+.main-container__register_button:hover {
+    background: #5ac95a;
+    cursor: pointer;
+}
+
+.main-container__header-invite_date {
+    margin-top: 5vh;
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (min-width: 576px) and (max-width: 769px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
