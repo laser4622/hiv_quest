@@ -1,6 +1,7 @@
 .register-form {
     width: 100vw;
-    margin-top: 7%;
+    max-width: 1024px;
+    margin: 16px auto;
     vertical-align: middle;
     display: flex;
     justify-content: space-between;
