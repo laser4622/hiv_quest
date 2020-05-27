@@ -1,9 +1,10 @@
 @font-face {
     font-family: 'Comfortaa';
-    src: local('Comfortaa'), url(/public/Comfortaa.ttf) format('opentype');
+    src: local('Comfortaa'), url("/Comfortaa.ttf") format('opentype');
 }
 
 body {
+    font-family: 'Comfortaa', serif;
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -17,10 +18,23 @@ body {
     justify-content: space-evenly;
     display: flex;
     width: 100vw;
-    height: 70vh;
+    /*height: 70vh;*/
     background: #6FB2BC;
 }
 
+.main-container__header-content{
+    /*width: 100vw;*/
+    max-width: 1024px;
+    padding: 40px 40px 0 40px;
+    margin: 0 auto;
+}
+
+.main-container__middle-content{
+    /*width: 100vw;*/
+    max-width: 1024px;
+    padding: 40px;
+    margin: 0 auto;
+}
 
 .main-container__header > div {
     min-width: 50%;
@@ -29,42 +43,181 @@ body {
 }
 
 .main-container__header-image {
+    width: 40%;
+    margin-bottom: -32px;
+    float: left
 }
 
 .main-container__header-invite {
+    width: 50%;
     font-family: Comfortaa, "Manjari Regular", serif;
     white-space: nowrap;
-    font-size: 5em;
+    font-size: 3vw;
+    float: right
 }
-
+.main-container__vk-register_button {
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+    font-size: 3vw;
+    margin-top: 32px;
+    background: #66e066;
+    padding: 16px;
+    /*width: 100%;*/
+    /*height: 100px;*/
+}
 .main-container__register_button {
-    border: white solid 5px;
-    font-size: 0.5em;
-    margin-top: 5vh;
-    background: #5ae85a;
-    width: 700px;
-    height: 150px;
-}
+     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+     font-size: 3vw;
+     margin-top: 32px;
+     background: #E2B184;
+     padding: 16px;
+     /*width: 100%;*/
+     /*height: 100px;*/
+ }
 
 .main-container__middle-block {
-    padding: 100px;
-    font-size: 64pt;
+
+    padding: 80px 0;
+    font-size: 3.5vw;
     font-family: Comfortaa, "Manjari Regular", serif;
     color:black;
     text-align: center;
 }
 
+
 .main-container__register_button:hover {
+    background: #cd9e75;
+    cursor: pointer;
+}
+.main-container__vk-register_button:hover {
     background: #5ac95a;
     cursor: pointer;
 }
 
 .main-container__header-invite_date {
-    margin-top: 5vh;
+
+    font-weight: 800;
+    margin-top: 32px;
 }
 
-@media (max-width: 576px) {
+.main-container__price_block1{
+    width: 40%;
+    background: #E28B84;
+    height: 30vw;
+    max-height: 360px;
+    max-width: 400px;
+    margin-left: 60%;
+    transform: rotate(2.5deg);
+}
 
+.main-container__price_block2{
+    width: 40%;
+    background: #E2B184;
+    margin: 0 auto;
+    max-height: 360px;
+    max-width: 400px;
+    transform: rotate(2.5deg);
+    height: 30vw;
+}
+
+.main-container__price_block3{
+    width: 40%;
+    background: #76CA85;
+    float: left;
+    max-height: 360px;
+    max-width: 400px;
+    height: 30vw;
+    transform: rotate(2.5deg);
+}
+
+.row{
+    width: 100%;
+    height: 25vw;
+    max-height: 300px;
+    font-weight: 900;
+}
+.main-container__price{
+
+    width: 100vw;
+    max-width: 1024px;
+    padding: 100px 40px 100px 40px ;
+    margin: 0 auto;
+}
+
+.main-container__price_text{
+    float: left;
+    width:  40%;
+    font-size: 3vw;
+
+}
+
+.main-container__price_block-text{
+    padding: 8vw 16px;
+    font-size: 3vw;
+}
+
+.main-container__footer-buttons > * {
+    padding: 0 16px;
+    width: 40%;
+}
+
+@media (max-width: 840px) {
+    .main-container__header-invite_date{
+        margin-top: 8px;
+    }
+    .main-container__header-content{
+        padding: 16px 16px 0 16px;
+        font-size: 4vw;
+    }
+
+    .main-container__middle-content{
+        padding: 16px;
+        font-weight: 600;
+        font-size: 4vw;
+    }
+    .main-container__header-invite{
+
+        width: 60%;
+        font-size: medium;
+    }
+    .main-container__header-image{
+        margin-bottom: -16px;
+    }
+    .main-container__register_button {
+        margin-top: 8px;
+        padding: 8px 2px;
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+        margin-bottom: 8px;
+        width: 80%;
+
+        font-size: 3.5vw;
+    }
+
+    .main-container__vk-register_button {
+        margin-top: 8px;
+        padding: 8px 2px;
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+        margin-bottom: 8px;
+        width: 80%;
+
+        font-size: 3.5vw;
+    }
+
+
+    .main-container__middle-block{
+        padding: 32px 0 32px 0;
+    }
+
+    .main-container__price{
+        padding: 40px 16px 40px 16px;
+    }
+
+    .main-container__price_text{
+        font-size: 4vw;
+        font-weight: 600;
+    }
+    .main-container__price_block-text{
+        padding: 10vw 3vw;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 769px) {
