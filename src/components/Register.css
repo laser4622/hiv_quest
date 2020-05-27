@@ -130,7 +130,7 @@
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
     .register-form__data_warning {
         font-family: Comfortaa, "Manjari Regular", serif;
         width: 80%;
