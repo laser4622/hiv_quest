@@ -66,6 +66,22 @@
 /*    background: #abd;*/
 /*}*/
 
+.register-form input[type="tel"] {
+    margin-bottom: 15px;
+}
+
+.register-form input[type="tel"]:valid:not(:placeholder-shown) {
+    border-color: green;
+}
+
+.register-form input[type="tel"]:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+.register-form input[type="tel"]:invalid:not(:placeholder-shown) + .form__error {
+    display: block;
+}
+
 .register-form button {
     border: none;
     font-family: Comfortaa, "Manjari Regular", serif;

@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
+import InputMask from 'react-input-mask'
 import { accessCode, baseURL } from "../api";
 import './Register.css'
 import { redirect_url } from "../variables";
+
+const PhoneNumberInput = (props) => {
+    return (
+        <InputMask
+            mask="+7\ (999) 999-99-99"
+            placeholder={props.placeholder}
+            name={props.name}
+            pattern={props.pattern}
+            minLength={props.minLength}
+        >
+            {(inputProps) => <input required {...inputProps} type="tel" />}
+        </InputMask>
+    )
+}
 
 const Register = (props) => {
     const params = new URLSearchParams(props.location.search);
@@ -20,7 +35,7 @@ const Register = (props) => {
     });
     return (
         <div className="register-form">
-            <form method="POST" action={baseURL + '/core/register'}>
+            <form method="POST" action={baseURL + '/core/register'} target="none">
                 <span className="register-form__data-protect" >Ваши данные надежно защищены</span>
                 <input style={{display: 'none'}} defaultValue={_id} name="_id"/>
                 <input placeholder="Имя" autoComplete="none" defaultValue={firstName} name="firstName" required/>
@@ -28,10 +43,16 @@ const Register = (props) => {
                 <input placeholder="Город" autoComplete="none" name="city" required/>
                 <input placeholder="Школа" autoComplete="none" name="school" required/>
                 <input placeholder="Класс" autoComplete="none" name="classroom" required/>
-                <input placeholder="Номер телефона" autoComplete="none" name="phone" required/>
+                <PhoneNumberInput
+                    placeholder="Номер телефона"
+                    type="tel"
+                    name="phone"
+                    pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+                    minLength="18"
+                    required
+                />
 
                 <input onChange={()=>setPrivacy(!privacy)} type="checkbox" name="fruit"/> <text className="register-form_policy_accept-text">Согласен с обрабокой и хранением персональных данных <br/></text>
-
                 <button disabled={!privacy} type="submit">
                     Регистрация
                 </button>
