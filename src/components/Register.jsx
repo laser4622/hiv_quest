@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import InputMask from 'react-input-mask'
 import { accessCode, sendRegisterDataToServer } from "../api";
 import './Register.css'
@@ -16,58 +16,54 @@ const PhoneNumberInput = (props) => {
             {(inputProps) => <input required {...inputProps} type="tel" />}
         </InputMask>
     )
-}
+};
 
 const Register = (props) => {
-    const params = new URLSearchParams(props.location.search);
-    const code = params.get('code');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [_id, setId] = useState('');
+
+    const formElement = useRef();
     const [privacy, setPrivacy] = useState(false);
     const [registerIsEnd, setRegisterIsEnd] = useState(false);
-    if (code && !firstName && !lastName) accessCode(code, redirect_url).then((res, err)=> {
-        if(res) {
-            setFirstName(res.data.firstName);
-            setLastName(res.data.lastName);
-            setId(res.data._id);
-        }
-    });
+
+    useEffect(()=>{
+        const params = new URLSearchParams(props.location.search);
+        const code = params.get('code');
+        if (code)
+            accessCode(code, redirect_url).then((res, err)=> {
+            if(res) {
+                formElement.current.firstName.value = res.data.firstName;
+                formElement.current.lastName.value = res.data.lastName;
+                formElement.current._id.value = res.data._id;
+            }
+        });
+
+
+
+    },[]);
 
     const sendDataToServer = async (e) => {
-        e.preventDefault();
-        const form = e.target;
+        try {
+            e.preventDefault();
+            const form = new FormData(e.target);
+            const data = {};
+            form.forEach((value, key) => {data[key] = value});
+            await sendRegisterDataToServer(data);
+            setRegisterIsEnd(true);
+        }catch (e) {
+            alert("Ошибка при регистрации");
+        }
+    };
 
-        sendRegisterDataToServer(
-            form._id.value,
-            form.firstName.value,
-            form.lastName.value,
-            form.city.value,
-            form.school.value,
-            form.classroom.value,
-            form.phone.value
-        )
-            .then((res, err)=> {
-                if (err) return alert("Ошибка при регистрации");
-                setRegisterIsEnd(true);
-            })
-    }
 
-    if(registerIsEnd) {
-        return (
-            <div className="register-form-success-end">
-                <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы зарегистрировались для прохождения квеста.<br/> <br/>Ждём вас 25 июня! Мы вам напомним.
-            </div>
-        )
-    }
-
-    return (
+    return (registerIsEnd?
+        <div className="register-form-success-end">
+            <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы зарегистрировались для прохождения квеста.<br/> <br/>Ждём вас 25 июня! Мы вам напомним.
+        </div>:
         <div className="register-form">
-            <form onSubmit={(e)=> sendDataToServer(e)}>
+            <form onSubmit={(e)=> sendDataToServer(e)} ref={formElement}>
                 <span className="register-form__data-protect" >Ваши данные надежно защищены</span>
-                <input style={{display: 'none'}} defaultValue={_id} name="_id"/>
-                <input placeholder="Имя" autoComplete="none" defaultValue={firstName} name="firstName" required/>
-                <input placeholder="Фамилия" autoComplete="none" defaultValue={lastName} name="lastName" required/>
+                <input style={{display: 'none'}} name="_id"/>
+                <input placeholder="Имя" autoComplete="none" name="firstName" required/>
+                <input placeholder="Фамилия" autoComplete="none" name="lastName" required/>
                 <input placeholder="Город / нас. пункт" autoComplete="none" name="city" required/>
                 <input placeholder="Школа" autoComplete="none" name="school" required/>
                 <input placeholder="Класс" autoComplete="none" name="classroom" required/>
