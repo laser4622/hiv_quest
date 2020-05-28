@@ -17,12 +17,12 @@ body {
     justify-content: space-evenly;
     display: flex;
     /*height: 70vh;*/
-    background: #6FB2BC;
+    background: #85cad5;
 }
 
 
 .main-container__header {
-    background: #75C6D1;
+    background: #85cad5;
     align-items: center;
     justify-content: space-evenly;
     display: flex;
@@ -58,7 +58,6 @@ body {
     margin-top: 10%;
     width: 45%;
     font-family: Comfortaa, "Manjari Regular", serif;
-    white-space: nowrap;
     font-size: 3vw;
     float: right;
     font-weight: bold;
@@ -66,8 +65,8 @@ body {
 .main-container__vk-register_button {
     font-family: Comfortaa, "Manjari Regular", serif;
     font-size: 1.7vw;
-    background: #89ff9e;
-    color: #000000;
+    background: #f7ff93;
+    color: #000c38;
     border: none;
     width: 90%;
     height: 100px;
@@ -81,6 +80,14 @@ body {
     cursor: pointer;
 }
 
+.main-container__footer-maker {
+    margin-top: 5vh;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    font-size: 12pt;
+    background: #eaeaea;
+}
 
 .main-container__register_button {
     margin-top: 10px;
@@ -118,9 +125,14 @@ body {
     margin-bottom: 40px;
 }
 
+
+.main-container__middle-block .main-container__header-image {
+    display: none;
+}
+
 .main-container__price_block1{
     width: 40%;
-    background: #E28B84;
+    background: #ec9791;
     height: 30vw;
     max-height: 360px;
     /*max-width: 400px;*/
@@ -130,7 +142,7 @@ body {
 
 .main-container__price_block2{
     width: 40%;
-    background: #E2B184;
+    background: #f5cf8a;
     margin: 0 auto;
     max-height: 360px;
     /*max-width: 400px;*/
@@ -140,7 +152,7 @@ body {
 
 .main-container__price_block3{
     width: 40%;
-    background: #76CA85;
+    background: #a9e2a0;
     float: left;
     max-height: 360px;
     /*max-width: 400px;*/
@@ -175,51 +187,143 @@ body {
 }
 
 .main-container__footer-buttons > * {
-    padding: 0 16px;
     width: 40%;
 }
 
-@media (max-width: 840px) {
-    .main-container__header-invite_date{
-        margin-top: 8px;
-        margin-bottom: 8px;
+@media (max-width: 1400px) {
+    .main-container__header-content {
     }
-    .main-container__header-content{
-        padding: 16px 16px 0 16px;
+    .main-container__register_button {
+        height: 50px;
+    }
+    .main-container__vk-register_button {
+        height: 50px;
+    }
+}
+
+@media (max-width: 840px) {
+
+    .main-container__price_text {
+        text-align: center;
+        margin-bottom: 1vh;
+        width: 100%;
+    }
+
+    .main-container__price {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        max-height: initial;
+        height: 45vh;
+        margin-bottom: 10px;
+    }
+
+    .main-container__price_block-text {
+        font-size: 9vw;
+    }
+
+    .main-container__price_block1 {
+        margin: auto;
+        max-height: initial;
+        height: 100%;
+        width: 100%;
+        float: initial;
+        transform: rotate(0);
+    }
+
+    .main-container__price_block2{
+        margin: auto;
+        max-height: initial;
+        height: 100%;
+        width: 100%;
+        float: initial;
+        transform: rotate(0);
+    }
+
+    .main-container__price_block3{
+        margin: auto;
+        max-height: initial;
+        height: 100%;
+        width: 100%;
+        float: initial;
+        transform: rotate(0);
+    }
+
+
+    .main-container__header-invite_text {
+        color: #ffffff;
+        font-size: 8vw;
+        white-space: normal;
+    }
+    .main-container__header {
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    .main-container__header-invite_date{
+        color: #ffffff;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 8vw;
+    }
+    .main-container__header-content {
+        padding: 5% 10px 0 10px;
+        width: 100%;
+        text-align: center;
         font-size: 4vw;
     }
 
     .main-container__middle-content{
         padding: 16px;
         font-weight: 600;
-        font-size: 4vw;
+        font-size: 25pt;
     }
     .main-container__header-invite{
-        margin-top: 10%;
-        width: 50%;
-        font-size: medium;
+        margin-top: 0;
+        width: 100%;
+        margin-bottom: 5%;
+        font-size: 30pt;
     }
-    .main-container__header-image{
-        width: 40%;
-        margin-bottom: -16px;
+
+    .main-container__header-image {
+        display: none;
+    }
+
+    .main-container__middle-block  .main-container__header-image {
+        display: initial;
+        float: initial;
+        width: 100%;
+        margin-bottom: 16px;
+        margin-top: 5px;
     }
     .main-container__register_button {
-        margin-top: 8px;
-        padding: 8px 2px;
-        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);;
+        font-weight: bolder;
+        font-size: 6vw;
+        height: 8vh;
         margin-bottom: 8px;
-        width: 80%;
+        width: 95%;
+    }
 
-        font-size: 3vw;
+    .main-container__footer-buttons .main-container__vk-register_button {
+        width: 95%;
+        margin: auto;
     }
 
     .main-container__vk-register_button {
+        height: 8vh;
+        border: 1px #1b292b;
+        font-weight: bolder;
+        width: 100%;
+        font-size: 6vw;
         box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);;
     }
 
 
-    .main-container__middle-block{
-        padding: 32px 0 32px 0;
+    .main-container__middle-block {
+        padding: 5px 0;
     }
 
     .main-container__price{
@@ -227,7 +331,7 @@ body {
     }
 
     .main-container__price_text{
-        font-size: 4vw;
+        font-size: 9vw;
         font-weight: 600;
     }
     .main-container__price_block-text{
@@ -244,25 +348,5 @@ body {
     .main-container__price_text{
         font-size: 2.5vw;
         font-weight: 600;
-    }
-}
-
-
-@media (max-width: 1400px) {
-    .main-container__header-content {
-    }
-
-    .main-container__vk-register_button {
-        height: 50px;
-    }
-}
-
-@media (max-width: 620px) {
-    .main-container__header-invite {
-        margin-top: 0;
-    }
-
-    .main-container__vk-register_button {
-        height: 20px;
     }
 }

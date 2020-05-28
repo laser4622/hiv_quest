@@ -40,7 +40,7 @@ const Register = (props) => {
                 <input style={{display: 'none'}} defaultValue={_id} name="_id"/>
                 <input placeholder="Имя" autoComplete="none" defaultValue={firstName} name="firstName" required/>
                 <input placeholder="Фамилия" autoComplete="none" defaultValue={lastName} name="lastName" required/>
-                <input placeholder="Город" autoComplete="none" name="city" required/>
+                <input placeholder="Город / нас. пункт" autoComplete="none" name="city" required/>
                 <input placeholder="Школа" autoComplete="none" name="school" required/>
                 <input placeholder="Класс" autoComplete="none" name="classroom" required/>
                 <PhoneNumberInput

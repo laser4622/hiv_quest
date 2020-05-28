@@ -29,18 +29,21 @@ const Main = () => {
         <div className="main-container">
             <div className="main-container__header">
                 <div className="main-container__header-content">
-                    <img className="main-container__header-image" src="./vich1.png" alt="vich"/>
                     <div className="main-container__header-invite">
+                        <span className="main-container__header-invite_text">
                         Прими участие в <br/> онлайн-квесте
+                        </span>
                         <div className="main-container__header-invite_date">
                             28 июня
                         </div>
                         <VkRegisterButton/>
                     </div>
+                    <img className="main-container__header-image" src="./vich1.png" alt="vich"/>
                 </div>
             </div>
             <div className="main-container__middle-block">
                 <div className="main-container__middle-content">
+                    <img className="main-container__header-image" src="./vich1.png" alt="vich"/>
                 Как уберечься от ВИЧ и СПИДа? <br/>
 
                 Пройди квест и узнай всё об этом
@@ -49,11 +52,11 @@ const Main = () => {
 
             <div className="main-container__third-block">
                 <div className="main-container__price">
+                    <div className="main-container__price_text">
+                        Супер-призы<br/>
+                        победителям!
+                    </div>
                     <div className="row">
-                        <div className="main-container__price_text">
-                            Супер-призы<br/>
-                            победителям!
-                        </div>
                         <div className="main-container__price_block1">
                             <div className="main-container__price_block-text">
                                 3 смартфона Xiaomi Radmi 8 3/32!
@@ -86,7 +89,9 @@ const Main = () => {
                     <VkRegisterButton/>
                     <RegisterButton/>
                 </div>
-
+            </div>
+            <div className="main-container__footer-maker">
+                Квест проводится Министерством здравоохранения Республики Башкортостан при поддержке Министерства образования. Организатор - Республиканский центр СПИД.
             </div>
         </div>
 
