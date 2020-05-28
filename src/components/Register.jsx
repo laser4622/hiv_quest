@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import InputMask from 'react-input-mask'
-import { accessCode, baseURL } from "../api";
+import { accessCode, sendRegisterDataToServer } from "../api";
 import './Register.css'
 import { redirect_url } from "../variables";
 
@@ -25,17 +25,45 @@ const Register = (props) => {
     const [lastName, setLastName] = useState('');
     const [_id, setId] = useState('');
     const [privacy, setPrivacy] = useState(false);
+    const [registerIsEnd, setRegisterIsEnd] = useState(false);
     if (code && !firstName && !lastName) accessCode(code, redirect_url).then((res, err)=> {
         if(res) {
             setFirstName(res.data.firstName);
             setLastName(res.data.lastName);
             setId(res.data._id);
-            console.log(res);
         }
     });
+
+    const sendDataToServer = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        sendRegisterDataToServer(
+            form._id.value,
+            form.firstName.value,
+            form.lastName.value,
+            form.city.value,
+            form.school.value,
+            form.classroom.value,
+            form.phone.value
+        )
+            .then((res, err)=> {
+                if (err) return alert("Ошибка при регистрации");
+                setRegisterIsEnd(true);
+            })
+    }
+
+    if(registerIsEnd) {
+        return (
+            <div className="register-form-success-end">
+                <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы зарегистрировались для прохождения квеста.<br/> <br/>Ждём вас 25 июня! Мы вам напомним.
+            </div>
+        )
+    }
+
     return (
         <div className="register-form">
-            <form method="POST" action={baseURL + '/core/register'} target="none">
+            <form onSubmit={(e)=> sendDataToServer(e)}>
                 <span className="register-form__data-protect" >Ваши данные надежно защищены</span>
                 <input style={{display: 'none'}} defaultValue={_id} name="_id"/>
                 <input placeholder="Имя" autoComplete="none" defaultValue={firstName} name="firstName" required/>

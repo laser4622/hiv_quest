@@ -12,3 +12,21 @@ export const accessCode = (code, redirectURL) => axios({
         redirectURL
     }
 });
+
+export const sendRegisterDataToServer = ( _id, firstName, lastName, city, school, classroom, phone) => axios({
+    method: 'POST',
+    url: `${baseURL}/core/register`,
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    data: {
+        _id,
+        firstName,
+        lastName,
+        city,
+        school,
+        classroom,
+        phone,
+    }
+});
+

@@ -129,6 +129,19 @@
 
 }
 
+.register-form-success-end-greetings {
+    color: #2e9900;
+    font-weight: bolder;
+}
+
+.register-form-success-end {
+    color: #000000;
+    font-family: Comfortaa, "Manjari Regular", serif;
+    font-size: 3vw;
+    margin-top: 25%;
+    text-align: center;
+}
+
 
 @media (max-width: 650px) {
     .register-form__data_warning {
