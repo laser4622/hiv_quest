@@ -29,7 +29,7 @@ const Main = () => {
         <div className="main-container">
             <div className="main-container__header">
                 <div className="main-container__header-content">
-                    <img className="main-container__header-image" src="./vich.png" alt="vich"/>
+                    <img className="main-container__header-image" src="./vich1.png" alt="vich"/>
                     <div className="main-container__header-invite">
                         Прими участие в <br/> онлайн-квесте
                         <div className="main-container__header-invite_date">
@@ -47,12 +47,12 @@ const Main = () => {
                 </div>
             </div>
 
-            <div className="main-container__header">
+            <div className="main-container__third-block">
                 <div className="main-container__price">
                     <div className="row">
                         <div className="main-container__price_text">
                             Супер-призы<br/>
-                            победителям
+                            победителям!
                         </div>
                         <div className="main-container__price_block1">
                             <div className="main-container__price_block-text">
