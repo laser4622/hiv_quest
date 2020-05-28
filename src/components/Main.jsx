@@ -59,8 +59,9 @@ const Main = () => {
                     <div className="row">
                         <div className="main-container__price_block1">
                             <div className="main-container__price_block-text">
-                                3 смартфона Xiaomi Radmi 8 3/32!
+                                3 смартфона Xiaomi Redmi 8 3/32!
                             </div>
+                            <img className="main-container__price_block-xiaomi" src="./xiaomi.png" alt="Xiaomi Redmi"/>
                         </div>
                     </div>
                     <div className="row">
@@ -68,7 +69,7 @@ const Main = () => {
                             <div className="main-container__price_block-text">
                                 11 призов по 3000 руб!
                             </div>
-
+                            <img className="main-container__price_block-xiaomi" src="./malo.png" alt="Xiaomi Redmi"/>
                         </div>
                     </div>
                     <div className="row">
@@ -76,6 +77,7 @@ const Main = () => {
                             <div className="main-container__price_block-text">
                                 11 призов по 2000 руб!
                             </div>
+                            <img className="main-container__price_block-xiaomi" src="./mnogo.png" alt="Xiaomi Redmi"/>
                         </div>
                     </div>
 
