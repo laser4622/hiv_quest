@@ -67,7 +67,7 @@
 /*}*/
 
 .register-form input[type="tel"] {
-    margin-bottom: 15px;
+    margin-bottom: 10px
 }
 
 .register-form input[type="tel"]:valid:not(:placeholder-shown) {
@@ -135,6 +135,7 @@
 }
 
 .register-form-success-end {
+    padding: 25px;
     color: #000000;
     font-family: Comfortaa, "Manjari Regular", serif;
     font-size: 3vw;
@@ -142,8 +143,27 @@
     text-align: center;
 }
 
+.register-form_error-phone {
+    font-size: 8pt;
+    display: block;
+    color: #930000;
+    margin-bottom: 10px;
+}
+
+.register-form_error-vk_home {
+    color: #3c5ac9;
+}
+
+.register-form_error-vk_home:hover {
+    color: #253e9a;
+    cursor: pointer;
+}
 
 @media (max-width: 650px) {
+    .register-form-success-end {
+        font-size: 5vw;
+    }
+
     .register-form__data_warning {
         font-family: Comfortaa, "Manjari Regular", serif;
         width: 80%;
