@@ -135,6 +135,7 @@ body {
 }
 
 .main-container__price_block1{
+    padding-bottom: 8px;
     text-align: center;
     width: 40%;
     background: #ec9791;
@@ -144,6 +145,7 @@ body {
 }
 
 .main-container__price_block2{
+    padding-bottom: 8px;
     text-align: center;
     width: 40%;
     background: #f5cf8a;
@@ -153,6 +155,7 @@ body {
 }
 
 .main-container__price_block3{
+    padding-bottom: 8px;
     text-align: center;
     width: 40%;
     background: #a9e2a0;
