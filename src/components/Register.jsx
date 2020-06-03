@@ -60,7 +60,7 @@ const Register = (props) => {
         }).catch(err => {
             if (err.response) {
                 if(err.response.status === 403) {
-                    setRegisterError("Пользователь с этим номером телефона уже зарегистрирован.");
+                    setRegisterError("Пользователь с таким номером телефона уже зарегистрирован.");
                     formElement.current.phone.value = '+7 (___) ___-__-__';
                     phoneNumberInput.current.value = '+7 (___) ___-__-__';
                 }
@@ -71,7 +71,7 @@ const Register = (props) => {
     if(registerVKError) {
         return (
             <div className="register-form-success-end">
-                Пользователь с этим аккаунтом ВКонтакте уже зарегистрирован. <span className="register-form_error-vk_home" onClick={()=>props.history.push('/')}>На главную</span>
+                Пользователь с таким аккаунтом ВКонтакте уже зарегистрирован. <span className="register-form_error-vk_home" onClick={()=>props.history.push('/')}>На главную</span>
             </div>
         )
     }
@@ -79,7 +79,7 @@ const Register = (props) => {
     return (registerIsEnd ?
             <div className="register-form-success-end">
                 <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы
-                зарегистрировались для прохождения квеста.<br/> <br/>Ждём вас 25 июня! Мы вам напомним.
+                успешно зарегистрированы.<br/> <br/>Ждём вас 25 июня! Мы обязательно напомним вам о начале квеста.
             </div> :
             <div className="register-form">
                 <form onSubmit={(e) => sendDataToServer(e)} ref={formElement}>
@@ -105,7 +105,7 @@ const Register = (props) => {
                     </span>
 
                     <input onChange={() => setPrivacy(!privacy)} type="checkbox" name="fruit"/>
-                    <text className="register-form_policy_accept-text">Согласен с обрабокой и хранением персональных
+                    <text className="register-form_policy_accept-text">Согласен на обработку и хранение персональных
                         данных <br/></text>
                     <button disabled={!privacy} type="submit">
                         Регистрация
@@ -115,11 +115,11 @@ const Register = (props) => {
                     <span className="register-form__data_warning-attention">Будьте внимательны!</span>
                     <br/>
                     <br/>
-                    При регистрации с некорректными данными, вы не сможете получить приз.
+                    Если вы укажете некорректные данные при регистрации, в случае победы не сможете получить приз.
                     <br/>
                     <br/>
-                    Мы пришлём вам всего 2 СМС. Первую - о том, что квест начался, вторую - если вы займёте призовое
-                    место. После окончания квеста все данные будут уничтожены.
+                    Мы пришлём вам всего 2 СМС. Первое - когда начнется квест, второе - если вы займёте призовое
+                    место. После окончания квеста все ваши данные будут уничтожены.
 
                 </div>
             </div>
