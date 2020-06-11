@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const baseURL = 'https://server.goquest.online/api';
+export const baseURL = 'https://api.goquest.online/api';
 
 export const accessCode = (code, redirectURL) => axios({
     method: 'POST',
