@@ -1,0 +1,35 @@
+.Game__Main{
+    margin: 5vh auto;
+    height: 90vh;
+    width: calc(90vh/16*9);
+    /*background: #CDF5FE;*/
+    background-image: url('/backstage1.png');
+    /*background-position: co;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.Game{
+    /*display: flex;*/
+}
+
+
+@media (max-width: 440px) {
+
+    .Game__Main{
+        margin: 0;
+        height: calc(100vw/9*16);
+        width: 100vw;
+    }
+
+    .Game__Side{
+        display: none;
+    }
+
+}

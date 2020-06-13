@@ -1,0 +1,64 @@
+
+.Bubble {
+    position: relative;
+    background: white;
+    border-radius: .4em;
+
+    /*margin-bottom: 50%;*/
+    padding: 16px;
+    z-index: 101;
+    top: 64%;
+    align-self: flex-start;
+}
+
+.Bubble.animated{
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 0.5s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 1s; /* Задержка перед началом */
+}
+
+.Bubble.right {
+    margin-left: 20px;
+    margin-right: -25%;
+}
+
+.Bubble.left {
+
+    margin-right: 20px;
+    margin-left: -25%;
+}
+
+
+.Bubble:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom-color: white;
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -20px;
+    top: .4em;
+}
+
+.Bubble.right:after {
+    left: calc(100% - 10px);
+    border-right: 0;
+}
+
+.Bubble.left:after {
+    left: 10px;
+    border-left: 0;
+}
+
+@keyframes show{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}

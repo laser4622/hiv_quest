@@ -1,0 +1,80 @@
+.Char{
+    /*width: 100px;*/
+    height: 70%;
+
+    z-index: 1;
+    /*margin-left: -10px;*/
+
+    position:relative;
+    /*background-image: url("/boy.png");*/
+    /*background: red;*/
+}
+
+.Char.right{
+    margin-left: auto;
+    order: 2;
+    transform: scaleX(-1);
+
+    animation-name: slideLeft;
+    -webkit-animation-name: slideLeft;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    visibility: visible !important;
+}
+
+
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150%) scaleX(-1);
+    }
+    50% {
+        transform: translateX(0%) scaleX(-1);
+    }
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(150%) scaleX(-1);
+    }
+    50% {
+        -webkit-transform: translateX(0%) scaleX(-1);
+    }
+}
+
+
+.Char.left{
+    animation-name: slideRight;
+    -webkit-animation-name: slideRight;
+
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    visibility: visible !important;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(-150%);
+    }
+    50% {
+        -webkit-transform: translateX(0%);
+    }
+}

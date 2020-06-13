@@ -1,5 +1,5 @@
 import React from 'react';
-import {redirect_url} from "../variables";
+import {redirect_url} from "../../variables";
 
 import './Main.css'
 

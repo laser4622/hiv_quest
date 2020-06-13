@@ -1,15 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
 import InputMask from 'react-input-mask'
-import {accessCode, sendRegisterDataToServer} from "../api";
+import {accessCode, sendRegisterDataToServer} from "../../api";
 import './Register.css'
-import {redirect_url} from "../variables";
+import {redirect_url} from "../../variables";
 
 const PhoneNumberInput = (props) => {
     return (
         <InputMask
+            mask="+7\ (999) 999-99-99"
             onChange={props.changeProp}
             ref={props.myRef}
-            mask="+7\ (999) 999-99-99"
+
             placeholder={props.placeholder}
             name={props.name}
             pattern={props.pattern}
