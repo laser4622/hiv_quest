@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import InputMask from "react-input-mask";
 import {gameLogin, getStatus} from "../../api";
+import appStore from "../../store";
 
 const Login = () => {
     const [value, setValue] = useState();
 
     const onClick = async () => {
-        const token = (await gameLogin({phone: value})).data;
-        console.log(token)
-        await getStatus(token)
+        await appStore.login(value);
+        await appStore.updateStatus()
+        // console.log(token)
+        // await getStatus(token)
     };
 
     return (
