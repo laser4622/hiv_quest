@@ -1,5 +1,8 @@
 .radio {
     z-index: 102;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .radio-button {
@@ -7,12 +10,12 @@
     border: 5px solid #29436c;
     border-radius: 25px;
     font-size: 25pt;
-    line-height: 50px;
+    line-height: 60px;
     width: 350px;
     height: 60px;
     text-align: center;
-    margin-left: -35%;
     margin-bottom: 10px;
+    align-self: center;
 }
 
 .radio-button:hover {
