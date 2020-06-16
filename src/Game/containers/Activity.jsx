@@ -3,7 +3,7 @@ import "./Activity.css"
 import Bubble from "../components/Bubble";
 import appStore from "../../store";
 import { observer } from "mobx-react"
-import Checklist from "../components/Checklist";
+import Checklist from "./Activities/Checklist";
 
 
 const Activity = () => {
@@ -12,7 +12,7 @@ const Activity = () => {
         <div
             className={`Activity ${appStore.position}`}>
             <Bubble position={appStore.position} text={appStore.text}/>
-            <Checklist options={["fed", "dot", "qwe"]}/>
+            <Checklist options={["Хорошо", "Нормально", "Ужасно"]}/>
 
         </div>
     )

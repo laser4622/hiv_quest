@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import "./Checklist.css"
+import "./Radio.css"
+import ActivityButton from "../../components/ActivityButton";
 
 const Checklist = ({ options, needSelect, callback }) => {
 
@@ -9,14 +10,17 @@ const Checklist = ({ options, needSelect, callback }) => {
         setSelected((state) => {
             const index = state.findIndex((element)=>element===option);
 
+            console.log(index)
+
             if(index===-1) {
-                state.push(option)
-                return state
+                state.push(option);
             }else {
-                return state.filter((element)=>element!==option);
+                state.splice(index,1);
             }
+
+            return [...state]
         })
-    }
+    };
 
     if(needSelect===selected.length) {
         callback(selected);
@@ -25,14 +29,14 @@ const Checklist = ({ options, needSelect, callback }) => {
     return (
         <div className="radio">
             {options.map(option=> (
-                <div
-                    onClick={()=>handleSelect(option)}
-                    style={{background: selected.findIndex((elem)=>elem===option)!==-1?'#e3e3e3':'white'}}
-                    className="radio-button">
-                    {option}
-                </div>
+                <ActivityButton
+                onClick={()=>handleSelect(option)}
+                selected={selected.findIndex((elem)=>elem === option)!==-1}
+                className="radio-button"
+                title={option}
+                />
             ))}
-            <button onClick={()=>console.log(selected)}>qwe</button>
+            {/*<button onClick={()=>console.log(selected)}>qwe</button>*/}
         </div>
     )
 };
