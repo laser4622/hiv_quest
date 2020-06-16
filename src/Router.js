@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import Main from "./Landing/components/Main";
 import Register from "./Landing/components/Register";
 import Login from "./Landing/components/Login";
-import Game from "./Game/Game";
+import Game from "./Game/containers/Game";
 
 const BaseRouter = () => (
     <div>

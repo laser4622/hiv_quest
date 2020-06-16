@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import "./Game.css";
-import InputMask from "react-input-mask";
-import {gameLogin, getStatus} from "../api";
-import Char from "./components/Char";
-import Bubble from "./components/Bubble";
-import Activity from "./containers/Activity";
-import appStore from "../store";
+import Char from "../components/Char";
+import Activity from "../containers/Activity";
+import appStore from "../../store";
 import {observer} from "mobx-react";
 
 
