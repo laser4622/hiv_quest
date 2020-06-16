@@ -11,8 +11,14 @@ const Activity = () => {
     return (
         <div
             className={`Activity ${appStore.position}`}>
+
             <Bubble position={appStore.position} text={appStore.text}/>
-            <Checklist options={["Хорошо", "Нормально", "Ужасно"]}/>
+
+            <Checklist
+                options={["Хорошо", "Нормально", "Ужасно"]}
+                needSelect={2}
+                callback={appStore.updateStatus}
+            />
 
         </div>
     )

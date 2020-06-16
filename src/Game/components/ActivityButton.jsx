@@ -5,7 +5,7 @@ const ActivityButton = ({onClick, title, selected}) => {
     return (
         <div
             onClick={onClick}
-            className={`ActivityButton ${selected&&'selected'}`}>
+            className={`ActivityButton ${selected?'selected':''}`}>
             {title}
         </div>
     )

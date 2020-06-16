@@ -1,7 +1,7 @@
 
 .ActivityButton {
     background: white;
-    border: 5px solid #29436c;
+    border: 4px solid #29436c;
     border-radius: 25px;
     font-size: medium;
     width: 100%;
@@ -10,6 +10,7 @@
     margin-bottom: 10px;
     align-self: center;
     padding: 4px 0;
+    margin-left: -4px;
 }
 
 .ActivityButton.selected{
