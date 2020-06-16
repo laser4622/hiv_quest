@@ -1,22 +1,43 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Game.css";
 import InputMask from "react-input-mask";
 import {gameLogin, getStatus} from "../api";
 import Char from "./components/Char";
 import Bubble from "./components/Bubble";
+import Activity from "./containers/Activity";
+import appStore from "../store";
+import {observer} from "mobx-react";
+
+
+const chars = {
+    boy: '/boy.png',
+    girl: '/girl.png',
+};
 
 const Game = () => {
-    const [right, setRight] = useState(false)
+    const [updating, setUpdating] = useState(false);
+    useEffect(() => {
+        setUpdating(true);
+        setTimeout(() => {
+            setUpdating(false);
+        }, 100);
+    }, [appStore.position]);
+
 
     return (
         <div className="Game">
 
             <div
                 className="Game__Main"
-                onClick={()=>{setRight(right=>!right)}}
+                onClick={appStore.updateStatus}
             >
-                <Char right={right}/>
-                <Bubble right={right}/>
+                {
+                    !updating &&
+                    <>
+                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
+                        <Activity/>
+                    </>
+                }
 
             </div>
 
@@ -25,4 +46,4 @@ const Game = () => {
     )
 };
 
-export default Game;
+export default observer(Game);

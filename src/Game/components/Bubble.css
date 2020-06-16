@@ -6,12 +6,12 @@
 
     font-size: medium;
 
-    max-width: calc(69% - 32px);
+    /*max-width: calc(69% - 32px);*/
 
 
     padding: 16px;
     z-index: 101;
-    top: 58%;
+    /*top: 58%;*/
 }
 
 .Bubble.animated{
@@ -22,13 +22,13 @@
     animation-delay: 1s; /* Задержка перед началом */
 }
 
-.Bubble.right {
-    right: 25%;
-}
+/*.Bubble.right {*/
+/*    right: 25%;*/
+/*}*/
 
-.Bubble.left {
-    left: 25%;
-}
+/*.Bubble.left {*/
+/*    left: 25%;*/
+/*}*/
 
 
 .Bubble:after {

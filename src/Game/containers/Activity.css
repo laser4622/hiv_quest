@@ -1,0 +1,16 @@
+.Activity{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    max-width: 72%;
+    top: 58%;
+}
+
+
+.Activity.right {
+    right: 25%;
+}
+
+.Activity.left {
+    left: 25%;
+}

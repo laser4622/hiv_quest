@@ -1,9 +1,17 @@
-import {observable, action, autorun, decorate} from 'mobx'
+import {observable, action, autorun, decorate, computed} from 'mobx'
 import Cookie from "js-cookie"
 import {getStatus, gameLogin} from "./api";
 
 class AppStore {
     token = '';
+    text = 'Привет, давно не видились. Как дела?';
+    activity = null;
+    isRight = false;
+
+
+
+    get position(){ return this.isRight?'right':'left' };
+
 
     async login(phone) {
         try {
@@ -15,9 +23,10 @@ class AppStore {
         }
     }
 
-    async updateStatus(){
-        console.log((await getStatus(this.token)).data)
-    }
+    updateStatus = async () => {
+        this.text = this.isRight?'Привет, давно не видились. Как дела?':'Привет, все хорошо, как у тебя?';
+        this.isRight = !this.isRight
+    };
 
 
     setToken(token) {
@@ -27,7 +36,11 @@ class AppStore {
 }
 
 decorate(AppStore, {
-
+    isRight: observable,
+    text: observable,
+    activity: observable,
+    position: computed,
+    updateStatus: action,
 });
 
 const appStore = new AppStore();
