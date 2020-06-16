@@ -1,8 +1,9 @@
 
 .Bubble {
-    position: absolute;
+    /*position: absolute;*/
     background: white;
     border-radius: .4em;
+    margin-bottom: 8px;
 
     font-size: medium;
 

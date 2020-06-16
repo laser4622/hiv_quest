@@ -29,13 +29,14 @@ const Game = () => {
 
             <div
                 className="Game__Main"
-                onClick={appStore.updateStatus}
+                // onClick={appStore.updateStatus}
             >
                 {
                     !updating &&
                     <>
-                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
                         <Activity/>
+                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
+
                     </>
                 }
 
