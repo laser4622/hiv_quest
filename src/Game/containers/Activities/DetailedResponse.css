@@ -1,0 +1,23 @@
+.DetailedResponse textarea {
+    resize: none;
+    height: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.DetailedResponse button {
+    float: right;
+}
+
+.DetailedResponse {
+    width: 100%;
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 0.5s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 1s; /* Задержка перед началом */
+}

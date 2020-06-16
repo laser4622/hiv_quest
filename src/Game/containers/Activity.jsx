@@ -5,6 +5,7 @@ import appStore from "../../store";
 import { observer } from "mobx-react"
 import Checklist from "./Activities/Checklist";
 import TimeChoice from "./Activities/TimeChoice";
+import DetailedResponse from "./Activities/DetailedResponse";
 
 
 const Activity = () => {
@@ -15,11 +16,8 @@ const Activity = () => {
 
             <Bubble position={appStore.position} text={appStore.text}/>
 
-            <TimeChoice
-                options={["Хорошо", "Нормально", "Ужасно"]}
+            <DetailedResponse
                 callback={(opt)=>console.log(opt)}
-                timeToAnswerInSeconds={5}
-                defaultAnswer="Хорошо"
             />
 
         </div>
