@@ -1,14 +1,17 @@
 
 .Bubble {
-    position: relative;
+    position: absolute;
     background: white;
     border-radius: .4em;
 
-    /*margin-bottom: 50%;*/
+    font-size: medium;
+
+    max-width: calc(69% - 32px);
+
+
     padding: 16px;
     z-index: 101;
-    top: 64%;
-    align-self: flex-start;
+    top: 58%;
 }
 
 .Bubble.animated{
@@ -20,14 +23,11 @@
 }
 
 .Bubble.right {
-    margin-left: 20px;
-    margin-right: -25%;
+    right: 25%;
 }
 
 .Bubble.left {
-
-    margin-right: 20px;
-    margin-left: -25%;
+    left: 25%;
 }
 
 

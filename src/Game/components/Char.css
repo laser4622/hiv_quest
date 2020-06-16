@@ -1,18 +1,13 @@
 .Char{
-    /*width: 100px;*/
-    height: 70%;
-
+    height: 80%;
+    /*width: 55%;*/
     z-index: 1;
-    /*margin-left: -10px;*/
-
-    position:relative;
-    /*background-image: url("/boy.png");*/
-    /*background: red;*/
+    position:absolute;
 }
 
 .Char.right{
-    margin-left: auto;
-    order: 2;
+    left: 45%;
+
     transform: scaleX(-1);
 
     animation-name: slideLeft;
@@ -49,6 +44,7 @@
 
 
 .Char.left{
+    right: 45%;
     animation-name: slideRight;
     -webkit-animation-name: slideRight;
 
