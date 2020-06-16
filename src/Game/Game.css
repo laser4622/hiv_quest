@@ -11,6 +11,7 @@
 
 
     display: flex;
+    position: relative;
     align-items: flex-end;
 }
 
@@ -23,7 +24,7 @@
 @media (max-width: 440px) {
 
     .Game__Main{
-        margin: 0;
+        margin: calc(50vh - 50vw/9*16) 0;
         height: calc(100vw/9*16);
         width: 100vw;
     }
