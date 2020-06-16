@@ -1,0 +1,21 @@
+.radio {
+    z-index: 102;
+}
+
+.radio-button {
+    background: white;
+    border: 5px solid #29436c;
+    border-radius: 25px;
+    font-size: 25pt;
+    line-height: 50px;
+    width: 350px;
+    height: 60px;
+    text-align: center;
+    margin-left: -35%;
+    margin-bottom: 10px;
+}
+
+.radio-button:hover {
+    background: #e5e5e5;
+    cursor: pointer;
+}
