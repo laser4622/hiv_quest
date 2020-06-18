@@ -1,0 +1,144 @@
+.CharSelection-select {
+    width: 100%;
+    height: 85%;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CharSelection {
+    background: #a8d5ee;
+    flex-grow: 0;
+    flex-basis: 100%;
+    height: 100%;
+}
+
+.CharSelection-invite {
+    font-size: 25pt;
+    text-align: center;
+    font-weight: bolder;
+    background: white;
+    color: #194472;
+    height: 15%;
+}
+
+.CharSelection-invite > span {
+    width: 60%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.CharSelection-select > div {
+    font-weight: bolder;
+    font-size: 14pt;
+    text-align: center;
+    margin-top: 15%;
+    width: 45%;
+    border-radius: 25em;
+    border: 5px solid white;
+    background: #194472;
+    height: 10%;
+    color: #b7d6ff;
+}
+
+.CharSelection-select > div:hover {
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.CharSelection-select_play {
+    height: 13%;
+}
+
+.CharSelection-select_play:hover {
+    cursor: pointer;
+}
+
+.CharSelection-select > div span {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 80%;
+    text-align: center;
+}
+
+
+.CharSelection-select__lock {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.CharSelection-select__lock-image {
+    position: relative;
+    z-index: 102;
+    width: 15%;
+}
+
+.CharSelection-select > div > img{
+    position: absolute;
+    width: 15%;
+}
+
+.CharSelection-select > div img[alt="girl"]{
+    margin-top: -35px;
+    margin-left: -32%;
+}
+
+.CharSelection-select > div img[alt="boy"]{
+    margin-top: -15px;
+    margin-left: -32%;
+}
+
+.CharSelection-select > div img[alt="virus"]{
+    margin-top: -10px;
+    margin-left: -30%;
+    width: 18%;
+}
+
+.CharSelection-select_play {
+    margin-top: 15%;
+    width: 35%;
+}
+
+.CharSelection-select  span img {
+    width: 100%;
+    height: 100%;
+}
+
+.CharSelection-select_play-text {
+    user-select: none;
+    position: relative;
+    display: block;
+    top: -71%;
+    color: white;
+    font-size: 25pt;
+    font-weight: bolder;
+    text-align: center;
+}
+
+@media (max-width: 440px) {
+    .CharSelection-select div {
+        font-size: 3vw;
+    }
+
+
+    .CharSelection-invite > span {
+        width: 50%;
+        font-size: 4vw;
+    }
+
+
+    .CharSelection-select_play-text {
+        font-size: 4vw;
+    }
+
+}

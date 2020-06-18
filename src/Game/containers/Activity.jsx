@@ -16,8 +16,9 @@ const Activity = () => {
 
             <Bubble position={appStore.position} text={appStore.text}/>
 
-            <DetailedResponse
+            <TimeChoice
                 callback={(opt)=>console.log(opt)}
+                options={['fed','dot','qwe', 'asd']} timeToAnswerInSeconds={60} defaultAnswer="fed"
             />
 
         </div>

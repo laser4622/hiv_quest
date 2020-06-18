@@ -4,6 +4,7 @@ import Char from "../components/Char";
 import Activity from "../containers/Activity";
 import appStore from "../../store";
 import {observer} from "mobx-react";
+import CharSelection from "./UI/CharSelection";
 
 
 const chars = {
@@ -31,8 +32,7 @@ const Game = () => {
                 {
                     !updating &&
                     <>
-                        <Activity/>
-                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
+                        <CharSelection accessible={['virus']} callback={(e)=>console.log(e)}/>
 
                     </>
                 }

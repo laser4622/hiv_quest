@@ -23,19 +23,23 @@ const TimeChoice = ({ options, timeToAnswerInSeconds, defaultAnswer, callback })
     useEffect(()=>{
         if(time === 0) {
             callback(defaultAnswer)
+            clearInterval(intervalRef.current)
         }
     },[time])
 
     return (
-        <div key="timeChoice" className="Checklist">
+        <div key="timeChoice" className="TimeChoice">
             {options.map((option, index)=> (
                 <ActivityButton
                     key={index}
-                    onClick={()=>callback(option)}
+                    onClick={()=>{clearInterval(intervalRef.current);callback(option)}}
                     title={option}
                 />
             ))}
-            <div><span className="TimeChoice__timer">{time}</span> </div>
+            <span className="TimeChoice-timer_border">
+                <div style={{borderRadius: '4px', background: "#123123", height: '8px', width: `${Math.floor(time/timeToAnswerInSeconds*100)}%`}}>
+                </div>
+            </span>
         </div>
     )
 };

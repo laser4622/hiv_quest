@@ -1,8 +1,41 @@
-.TimeChoice__timer {
-    display: block;
-    background: black;
-    color: white;
-    float: right;
-    padding: 10px;
-    border-radius: 6px;
+.TimeChoice {
+    z-index: 102;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+.TimeChoice div{
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 1s; /*Скорость перехода состояния элемента*/
+    animation: show 0.5s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+}
+
+.TimeChoice div:nth-child(1){
+    animation-delay: 1.4s; /* Задержка перед началом */
+}
+
+.TimeChoice div:nth-child(2){
+    animation-delay: 1.8s; /* Задержка перед началом */
+}
+
+.TimeChoice div:nth-child(3){
+    animation-delay: 2.2s; /* Задержка перед началом */
+}
+
+.TimeChoice div:nth-child(4){
+    animation-delay: 2.6s; /* Задержка перед началом */
+}
+
+.TimeChoice-timer_border {
+    display: block;
+    opacity: 0;
+    transition: 1s;
+    animation: show 0.5s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2.8s;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid black;
+}
+
