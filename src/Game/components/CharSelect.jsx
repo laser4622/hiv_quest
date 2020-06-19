@@ -23,7 +23,7 @@ const CharSelect = ({accessible, setSelected, charName, description, selected}) 
             <img src={`${charName}Icon.png`} alt={charName}/>
             <span>{description}</span>
             {charIsAccessible&&
-            <div className="CharSelection-select__lock">
+            <div className="CharSelection-select__lock" style={charName==='boy'||charName==='girl'?{marginTop: '-7%'}:{}}>
                 <img className="CharSelection-select__lock-image" src="/lock.png" alt="lock"/>
             </div>
             }

@@ -32,7 +32,7 @@ const Game = () => {
                 {
                     !updating &&
                     <>
-                        <CharSelection accessible={['virus']} callback={(e)=>console.log(e)}/>
+                        <CharSelection accessible={['boy']} callback={(e)=>console.log(e)}/>
 
                     </>
                 }
