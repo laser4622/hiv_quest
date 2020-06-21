@@ -7,12 +7,9 @@ import {observer} from "mobx-react";
 import CharSelection from "./UI/CharSelection";
 import FinishScreen from "./UI/FinishScreen";
 import Captions from "./UI/Сaptions";
+import GamePlay from "./GamePlay";
 
 
-const chars = {
-    boy: '/boy.png',
-    girl: '/girl.png',
-};
 
 const Game = () => {
     const [updating, setUpdating] = useState(false);
@@ -38,9 +35,9 @@ const Game = () => {
 
                         {/*<Captions />*/}
                         {/*<FinishScreen finishTime={100} points={0}/>*/}
+                        <GamePlay/>
 
-                        <Activity/>
-                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
+
 
                     </>
                 }
