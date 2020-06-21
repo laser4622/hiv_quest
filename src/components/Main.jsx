@@ -75,7 +75,7 @@ const Main = () => {
                     <div className="row">
                         <div className="main-container__price_block3">
                             <div className="main-container__price_block-text">
-                                11 призов по 2000 руб!
+                                20 призов по 2000 руб!
                             </div>
                             <img className="main-container__price_block-xiaomi" src="./mnogo.png" alt="Xiaomi Redmi"/>
                         </div>
