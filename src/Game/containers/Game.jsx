@@ -20,6 +20,12 @@ const Game = () => {
         }, 100);
     }, [appStore.position]);
 
+    const getContent = () => {
+        switch (appStore.currentStep) {
+            case 0: return <CharSelection availableUsers={['girl']}/>
+            default: return ''
+        }
+    }
 
     return (
         <div className="Game">
@@ -29,17 +35,7 @@ const Game = () => {
                 // onClick={appStore.updateStatus}
             >
                 {
-                    !updating &&
-                    <>
-                        {/*<CharSelection availableUsers={['girl']} callback={(e)=>console.log(e)}/>*/}
-
-                        {/*<Captions />*/}
-                        {/*<FinishScreen finishTime={100} points={0}/>*/}
-                        <GamePlay/>
-
-
-
-                    </>
+                    !updating && getContent()
                 }
 
             </div>

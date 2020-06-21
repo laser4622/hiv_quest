@@ -2,6 +2,7 @@ import React from 'react';
 import Activity from "./Activity";
 import Char from "../components/Char";
 import appStore from "../../store";
+import CharSelection from "./UI/CharSelection";
 
 
 const chars = {
@@ -12,8 +13,7 @@ const chars = {
 const GamePlay = () => {
     return (
         <>
-
-            <Activity/>
+            <Activity />
             <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
 
         </>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './FinishScreen.css'
 
-const FinishScreen = ({ finishTime, points }) => {
+const FinishScreen = ({ finishTime, score }) => {
     return (
         <div className="FinishScreen">
             <div>Спасибо за уделённое время!</div>
             <div className="FinishScreen-image"><img src="/heart.png" alt="heart"/></div>
             <div className="FinishScreen-points">
                 Вы набрали
-                <div className="FinishScreen-points_amount">{points} баллов</div>
+                <div className="FinishScreen-points_amount">{score} баллов</div>
             </div>
             <div className="FinishScreen-time">
                 За

@@ -6,15 +6,11 @@ class AppStore {
     token = '';
     text = 'Привет, давно не видились. Как дела?';
     activity = null;
-    isRight = false;
+    position = '';
     currentChar = null;
     currentStep = 0;
+    score = 0;
     background = '';
-
-
-    get position() {
-        return this.isRight ? 'right' : 'left'
-    };
 
 
     async login(phone) {
@@ -28,8 +24,16 @@ class AppStore {
     }
 
     updateStatus = async () => {
-        this.text = this.isRight ? 'Привет, давно не видились. Как дела?' : 'Привет, все хорошо, как у тебя?';
-        this.isRight = !this.isRight
+        const status = (await getStatus(this.token)).data
+
+
+        this.currentChar = status.char;
+/*
+        this.text = status.activity.text;
+        this.currentStep = status.currentStep;
+        this.score = status.score;
+        this.position = status.position;
+        this.background = status.background;*/
     };
 
 
@@ -43,7 +47,7 @@ decorate(AppStore, {
     isRight: observable,
     text: observable,
     activity: observable,
-    position: computed,
+    position: observable,
     updateStatus: action,
     currentChar: observable
 });
@@ -54,7 +58,7 @@ autorun(async () => {
     const token = Cookie.get('token');
 
     appStore.setToken(token);
-    getStatus(token)
+    await appStore.updateStatus();
 
 });
 

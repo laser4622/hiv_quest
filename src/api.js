@@ -1,6 +1,7 @@
 import axios from 'axios';
+import appStore from "./store";
 // export const baseURL = 'https://api.goquest.online/api';
-export const baseURL = 'http://127.0.0.1:8080/api';
+export const baseURL = 'http://172.20.10.3:8080/api';
 
 export const accessCode = (code, redirectURL) => axios({
     method: 'POST',
@@ -33,11 +34,11 @@ export const gameLogin = (data) => axios({
     data
 });
 
-export const getStatus = (token) => axios({
+export const getStatus = () => axios({
     method: 'GET',
     url: `${baseURL}/game/status`,
     headers: {
         'Content-Type': 'application/json',
-        'authorization': `Barer ${token}`
+        'authorization': `Barer ${appStore.token}`
     }
 });
