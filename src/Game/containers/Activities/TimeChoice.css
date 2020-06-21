@@ -39,3 +39,10 @@
     border: 1px solid black;
 }
 
+.TimeChoice-timer_border > div{
+    border-radius: 4px;
+    background: #3db081;
+    height: 8px;
+    flex: none;
+    transition-timing-function: linear;
+}

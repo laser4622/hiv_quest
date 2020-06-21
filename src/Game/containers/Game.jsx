@@ -36,7 +36,12 @@ const Game = () => {
                     <>
                         {/*<CharSelection availableUsers={['girl']} callback={(e)=>console.log(e)}/>*/}
 
-                        <Captions />
+                        {/*<Captions />*/}
+                        {/*<FinishScreen finishTime={100} points={0}/>*/}
+
+                        <Activity/>
+                        <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
+
                     </>
                 }
 

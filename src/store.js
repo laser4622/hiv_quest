@@ -7,6 +7,7 @@ class AppStore {
     text = 'Привет, давно не видились. Как дела?';
     activity = null;
     isRight = false;
+    currentChat=null;
 
 
 
@@ -41,6 +42,7 @@ decorate(AppStore, {
     activity: observable,
     position: computed,
     updateStatus: action,
+    currentChat: observable
 });
 
 const appStore = new AppStore();

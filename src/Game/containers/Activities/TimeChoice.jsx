@@ -37,7 +37,7 @@ const TimeChoice = ({ options, timeToAnswerInSeconds, defaultAnswer, callback })
                 />
             ))}
             <span className="TimeChoice-timer_border">
-                <div style={{borderRadius: '4px', background: "#123123", height: '8px', width: `${Math.floor(time/timeToAnswerInSeconds*100)}%`}}>
+                <div style={{width: `${Math.floor(time/timeToAnswerInSeconds*100)}%`}}>
                 </div>
             </span>
         </div>
