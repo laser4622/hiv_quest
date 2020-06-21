@@ -5,6 +5,8 @@ import Activity from "../containers/Activity";
 import appStore from "../../store";
 import {observer} from "mobx-react";
 import CharSelection from "./UI/CharSelection";
+import FinishScreen from "./UI/FinishScreen";
+import Captions from "./UI/Сaptions";
 
 
 const chars = {
@@ -32,8 +34,9 @@ const Game = () => {
                 {
                     !updating &&
                     <>
-                        <CharSelection availableUsers={[]} callback={(e)=>console.log(e)}/>
+                        {/*<CharSelection availableUsers={['girl']} callback={(e)=>console.log(e)}/>*/}
 
+                        <Captions />
                     </>
                 }
 
