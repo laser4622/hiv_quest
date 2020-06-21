@@ -3,7 +3,7 @@ import "./CharSelection.css";
 import {observer} from "mobx-react";
 import CharSelect from "../../components/CharSelect";
 
-const CharSelection = ({callback, accessible}) => {
+const CharSelection = ({callback, availableUsers}) => {
 
     const [selected, setSelected] = useState('');
 
@@ -18,19 +18,19 @@ const CharSelection = ({callback, accessible}) => {
             </div>
             <div className="CharSelection-select">
                 <CharSelect
-                    accessible={accessible}
+                    accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Саша Красковская, здоровый человек"
                     charName="girl"/>
                 <CharSelect
-                    accessible={accessible}
+                    accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Саша Борцов, зараженный человек"
                     charName="boy"/>
                 <CharSelect
-                    accessible={accessible}
+                    accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Вирус СПИД"
