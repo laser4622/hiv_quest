@@ -1,0 +1,29 @@
+.FinishScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    background: white;
+    color: #3e6980;
+    font-weight: bolder;
+    justify-content: space-around;
+    font-size: 20pt;
+    text-align: center;
+}
+
+.FinishScreen-image  {
+    text-align: center;
+}
+
+.FinishScreen-image img {
+    width: 50%;
+}
+
+.FinishScreen-observe {
+    text-align: center;
+}
+
+.FinishScreen-observe_vk img{
+    width: 40%;
+}
