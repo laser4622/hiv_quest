@@ -1,10 +1,9 @@
 import {observable, action, autorun, decorate, computed} from 'mobx'
 import Cookie from "js-cookie"
-import {getStatus, gameLogin} from "./api";
+import {getStatus, gameLogin, chooseChar, getReset, getNext} from "./api";
 
 class AppStore {
     token = '';
-    text = 'Привет, давно не видились. Как дела?';
     activity = null;
     position = '';
     currentChar = null;
@@ -23,17 +22,30 @@ class AppStore {
         }
     }
 
-    updateStatus = async () => {
-        const status = (await getStatus(this.token)).data
-
-
+    setStatus = (status) => {
         this.currentChar = status.char;
-/*
-        this.text = status.activity.text;
+        this.activity = status.activity;
         this.currentStep = status.currentStep;
         this.score = status.score;
         this.position = status.position;
-        this.background = status.background;*/
+        this.background = status.background;
+    }
+
+    getNextStatus = async (option={}) => {
+        this.setStatus( (await getNext(option)).data );
+
+    }
+
+    resetGame = async () => {
+        this.setStatus((await getReset()).data)
+    }
+
+    chooseChar = async (data) => {
+        this.setStatus((await chooseChar(data)).data)
+    }
+
+    updateStatus = async () => {
+        this.setStatus((await getStatus(this.token)).data);
     };
 
 
@@ -45,7 +57,6 @@ class AppStore {
 
 decorate(AppStore, {
     isRight: observable,
-    text: observable,
     activity: observable,
     position: observable,
     updateStatus: action,
@@ -54,12 +65,9 @@ decorate(AppStore, {
 
 const appStore = new AppStore();
 
-autorun(async () => {
+autorun(() => {
     const token = Cookie.get('token');
-
     appStore.setToken(token);
-    await appStore.updateStatus();
-
 });
 
 export default appStore;

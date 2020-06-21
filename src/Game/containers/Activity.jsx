@@ -6,21 +6,22 @@ import { observer } from "mobx-react"
 import Checklist from "./Activities/Checklist";
 import TimeChoice from "./Activities/TimeChoice";
 import DetailedResponse from "./Activities/DetailedResponse";
-
+import Dialog from "./Activities/Dialog";
+import Radio from "./Activities/Radio";
 
 const Activity = () => {
-
+    const getActivity = () => {
+        switch (appStore.activity&&appStore.activity.type) {
+            case 'dialog': return <Dialog/>
+            case 'radio': return <Radio/>
+            case 'checklist': return <Checklist/>
+            default: return ''
+        }
+    }
     return (
         <div
             className={`Activity ${appStore.position}`}>
-
-            <Bubble position={appStore.position} text={appStore.text}/>
-
-            <TimeChoice
-                callback={(opt)=>console.log(opt)}
-                options={['fed','dot','qwe', 'asd']} timeToAnswerInSeconds={60} defaultAnswer="fed"
-            />
-
+            {getActivity()}
         </div>
     )
 };

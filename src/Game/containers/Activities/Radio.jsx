@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import "./Radio.css"
 import ActivityButton from "../../components/ActivityButton";
+import appStore from "../../../store";
+import {getNext} from "../../../api";
+import Bubble from "../../components/Bubble";
 
-const Radio = ({ options, callback }) => {
+const Radio = () => {
     return (
-            <div className="radio">
-                {options.map(option=> (
-                    <ActivityButton onClick={()=>callback(option)} title={option}/>
+            <div className="Radio">
+                <Bubble position={appStore.position} text={appStore.activity.text}/>
+                {appStore.activity.options.map(option=> (
+                    <ActivityButton onClick={()=>appStore.getNextStatus({answer: option})} title={option}/>
                 ))}
             </div>
     )

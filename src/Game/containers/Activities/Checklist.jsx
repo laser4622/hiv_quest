@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import "./Checklist.css"
 import ActivityButton from "../../components/ActivityButton";
+import appStore from "../../../store";
+import Bubble from "../../components/Bubble";
 
-const Checklist = ({ options, needSelect, callback }) => {
+const Checklist = ({callback }) => {
     const [selected, setSelected] = useState([]);
     useEffect(()=>{
-        if(needSelect===selected.length) {
-            callback(selected);
+        if(appStore.activity.needSelect===selected.length) {
+            appStore.getNextStatus({answer: selected});
         }
     },[selected]);
 
@@ -28,7 +30,8 @@ const Checklist = ({ options, needSelect, callback }) => {
 
     return (
         <div className="Checklist">
-            {options.map(option=> (
+            <Bubble position={appStore.position} text={appStore.activity.text}/>
+            {appStore.activity.options.map(option=> (
                 <ActivityButton
                 onClick={()=>handleSelect(option)}
                 selected={selected.findIndex((elem)=>elem === option)!==-1}

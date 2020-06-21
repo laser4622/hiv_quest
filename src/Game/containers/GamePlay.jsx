@@ -3,6 +3,7 @@ import Activity from "./Activity";
 import Char from "../components/Char";
 import appStore from "../../store";
 import CharSelection from "./UI/CharSelection";
+import { observer } from "mobx-react"
 
 
 const chars = {
@@ -14,10 +15,9 @@ const GamePlay = () => {
     return (
         <>
             <Activity />
-            <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
-
+            <Char position={appStore.position} src={`${appStore.currentChar}.png`}/>
         </>
     )
 };
 
-export default GamePlay;
+export default observer(GamePlay);

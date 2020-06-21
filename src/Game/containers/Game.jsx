@@ -20,16 +20,20 @@ const Game = () => {
         }, 100);
     }, [appStore.position]);
 
+    useEffect(()=>{
+        appStore.updateStatus();
+    },[])
+
     const getContent = () => {
         switch (appStore.currentStep) {
-            case 0: return <CharSelection availableUsers={['girl']}/>
-            default: return ''
+            case '0': return <CharSelection availableUsers={['girl']} callback={(charName)=>appStore.chooseChar({charName})}/>
+            default: return <GamePlay/>
         }
     }
 
     return (
         <div className="Game">
-
+            <button onClick={()=>appStore.resetGame()}>RESET</button>
             <div
                 className="Game__Main"
                 // onClick={appStore.updateStatus}
