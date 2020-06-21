@@ -12,13 +12,13 @@ const FinishScreen = ({ finishTime, points }) => {
             </div>
             <div className="FinishScreen-time">
                 За
-                <div className="FinishScreen-time_amount">{finishTime}</div>
+                <div className="FinishScreen-time_amount">50 мин. 40 сек.</div>
             </div>
             <div>Ждем подведения итогов</div>
             <div className="FinishScreen-observe">
                 Следите за нами:
                 <div className="FinishScreen-observe_vk">
-                    <img src="/vk.png" alt="vk"/>
+                    <a href="https://vk.com/goquest.online" target="_blank"><img src="/vk.png" alt="vk"/></a>
                 </div>
             </div>
         </div>

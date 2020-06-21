@@ -25,5 +25,22 @@
 }
 
 .FinishScreen-observe_vk img{
-    width: 40%;
+    margin-top: 25px;
+    width: 35%;
+}
+
+.FinishScreen-time_amount {
+    margin-top: 10px;
+    width: 220px;
+    background: #a4dde7;
+    padding: 10px;
+    border-radius: 25em;
+}
+
+.FinishScreen-points_amount {
+    margin-top: 10px;
+    width: 220px;
+    padding: 10px;
+    background: #a4dde7;
+    border-radius: 25em;
 }

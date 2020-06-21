@@ -6,6 +6,7 @@ import appStore from "../../store";
 import {observer} from "mobx-react";
 import CharSelection from "./UI/CharSelection";
 import FinishScreen from "./UI/FinishScreen";
+import Captions from "./UI/Сaptions";
 
 
 const chars = {
@@ -33,7 +34,7 @@ const Game = () => {
                 {
                     !updating &&
                     <>
-                        <FinishScreen finishTime={1} points={100}/>
+                        <Captions />
 
                     </>
                 }
