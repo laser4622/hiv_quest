@@ -11,12 +11,12 @@ const chars = {
 
 const GamePlay = () => {
     return (
-        <div className="GamePlay">
+        <>
 
             <Activity/>
             <Char position={appStore.position} src={chars[appStore.isRight?'boy':'girl']}/>
 
-        </div>
+        </>
     )
 };
 
