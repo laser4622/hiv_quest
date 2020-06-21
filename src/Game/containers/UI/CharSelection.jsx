@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./CharSelection.css";
 import {observer} from "mobx-react";
-import CharSelect from "../../components/CharSelect";
+import CharButton from "../../components/CharButton";
 
 const CharSelection = ({callback, availableUsers}) => {
 
@@ -17,27 +17,27 @@ const CharSelection = ({callback, availableUsers}) => {
                 <span>Выбери за кого будешь играть</span>
             </div>
             <div className="CharSelection-select">
-                <CharSelect
+                <CharButton
                     accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Саша Красковская, здоровый человек"
                     charName="girl"/>
-                <CharSelect
+                <CharButton
                     accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Саша Борцов, зараженный человек"
                     charName="boy"/>
-                <CharSelect
+                <CharButton
                     accessible={availableUsers}
                     selected={selected}
                     setSelected={setSelected}
                     description="Вирус СПИД"
                     charName="virus"/>
 
-                <span className="CharSelection-select_play" onClick={handlePlay}>
-                    <img src={selected?"/ButtonPlayGreen.png":'ButtonPlayGrey.png'}/>
+                <span className={`CharSelection-select_play ${selected?'':'disabled'}`} onClick={handlePlay}>
+                    {/*<img src={selected?"/ButtonPlayGreen.png":'ButtonPlayGrey.png'}/>*/}
                     <span className="CharSelection-select_play-text">Играть</span>
                 </span>
             </div>

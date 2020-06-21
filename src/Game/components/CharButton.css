@@ -1,3 +1,92 @@
 .CharButton{
-    background: rgb(23,61,86);
+    /*font-weight: bolder;*/
+    /*font-size: 12pt;*/
+    text-align: center;
+    margin-top: 15%;
+    width: 45%;
+    border: 5px solid white;
+    background: #194472;
+    height: 10%;
+    color: #b7d6ff;
+
+    border-radius: 25em;
+    padding: 4px 4px 4px 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    position: relative;
+
+    font-size: calc(90vh/16*9 * 0.035);
+    font-weight: 300;
+
+}
+
+.CharButton:hover {
+    cursor: pointer;
+    user-select: none;
+}
+
+.CharButton.accessible{
+    background: #122131;
+    color: #909090;
+    border-color: #697379;
+}
+
+.CharButton.selected{
+    background: white;
+    color: black;
+    border-color: #194472;
+}
+
+
+.CharButton span {
+    width: 90%;
+    /*position: relative;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*margin-right: -50%;*/
+    /*transform: translate(-50%, -50%);*/
+    /*display: block;*/
+    /*width: 80%;*/
+    /*text-align: center;*/
+}
+
+.CharButton:before{
+    position: absolute;
+    content: '';
+    width: 50%;
+    height: 140%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    top: -20%;
+    left: -20%;
+}
+.CharButton.boy:before{
+    background-image: url("/boyIcon.png");
+}
+.CharButton.girl:before{
+    background-image: url("/girlIcon.png");
+}
+.CharButton.virus:before{
+    background-image: url("/virusIcon.png");
+}
+
+
+.CharButton__lock {
+    width: 100%;
+    /*height: 100%;*/
+    text-align: center;
+    position: absolute;
+    /*top: 50%;*/
+    left: 0;
+}
+
+
+
+@media (max-width: 440px) {
+    .CharButton{
+        font-size: calc(90vh/16*9 * 0.04);
+    }
 }
