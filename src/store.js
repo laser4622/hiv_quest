@@ -7,11 +7,14 @@ class AppStore {
     text = 'Привет, давно не видились. Как дела?';
     activity = null;
     isRight = false;
-    currentChat=null;
+    currentChar = null;
+    currentStep = 0;
+    background = '';
 
 
-
-    get position(){ return this.isRight?'right':'left' };
+    get position() {
+        return this.isRight ? 'right' : 'left'
+    };
 
 
     async login(phone) {
@@ -19,13 +22,13 @@ class AppStore {
             const token = (await gameLogin({phone})).data;
             Cookie.set("token", token);
             this.setToken(token);
-        }catch (e) {
+        } catch (e) {
             console.log(e);
         }
     }
 
     updateStatus = async () => {
-        this.text = this.isRight?'Привет, давно не видились. Как дела?':'Привет, все хорошо, как у тебя?';
+        this.text = this.isRight ? 'Привет, давно не видились. Как дела?' : 'Привет, все хорошо, как у тебя?';
         this.isRight = !this.isRight
     };
 
@@ -42,15 +45,17 @@ decorate(AppStore, {
     activity: observable,
     position: computed,
     updateStatus: action,
-    currentChat: observable
+    currentChar: observable
 });
 
 const appStore = new AppStore();
 
-autorun(() => {
+autorun(async () => {
     const token = Cookie.get('token');
 
     appStore.setToken(token);
+    getStatus(token)
+
 });
 
 export default appStore;
