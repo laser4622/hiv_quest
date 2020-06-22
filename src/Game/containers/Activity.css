@@ -15,3 +15,7 @@
 .Activity.left {
     left: 25%;
 }
+
+.Activity.null {
+    left: 15%;
+}

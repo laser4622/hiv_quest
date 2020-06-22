@@ -19,7 +19,7 @@
     position: relative;
 
     font-size: calc(90vh/16*9 * 0.035);
-    font-weight: 300;
+    font-weight: 900;
 
 }
 
@@ -87,6 +87,6 @@
 
 @media (max-width: 440px) {
     .CharButton{
-        font-size: calc(90vh/16*9 * 0.04);
+        font-size: calc(90vh/16*9 * 0.035);
     }
 }

@@ -7,9 +7,10 @@ class AppStore {
     activity = null;
     position = '';
     currentChar = null;
-    currentStep = 0;
+    currentStep = '0';
     score = 0;
     background = '';
+    availableChars = {};
 
 
     async login(phone) {
@@ -23,6 +24,7 @@ class AppStore {
     }
 
     setStatus = (status) => {
+        this.availableChars = status.availableChars
         this.currentChar = status.char;
         this.activity = status.activity;
         this.currentStep = status.currentStep;

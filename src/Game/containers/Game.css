@@ -10,7 +10,8 @@
     overflow: hidden;
     min-height: 568px;
     min-width: 320px;
-
+    font-family: Nunito, serif ;
+    font-weight: 900;
     display: flex;
     position: relative;
     align-items: flex-end;

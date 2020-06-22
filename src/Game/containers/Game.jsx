@@ -8,6 +8,7 @@ import CharSelection from "./UI/CharSelection";
 import FinishScreen from "./UI/FinishScreen";
 import Captions from "./UI/Сaptions";
 import GamePlay from "./GamePlay";
+import Points from "../components/Points";
 
 
 
@@ -18,7 +19,7 @@ const Game = () => {
         setTimeout(() => {
             setUpdating(false);
         }, 100);
-    }, [appStore.position]);
+    }, [appStore.position, appStore.currentChar]);
 
     useEffect(()=>{
         appStore.updateStatus();
@@ -26,7 +27,7 @@ const Game = () => {
 
     const getContent = () => {
         switch (appStore.currentStep) {
-            case '0': return <CharSelection availableUsers={['girl']} callback={(charName)=>appStore.chooseChar({charName})}/>
+            case '0': return <CharSelection/>
             default: return <GamePlay/>
         }
     }
@@ -36,8 +37,10 @@ const Game = () => {
             <button onClick={()=>appStore.resetGame()}>RESET</button>
             <div
                 className="Game__Main"
+                style={{backgroundImage: `url('/${appStore.background}')`}}
                 // onClick={appStore.updateStatus}
             >
+                {appStore.currentStep!=='0'&&<Points/>}
                 {
                     !updating && getContent()
                 }

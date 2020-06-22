@@ -1,0 +1,20 @@
+.Points {
+    background-image: url("/points.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 35%;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    animation: none;
+}
+
+.Points span {
+    text-align: center;
+    font-weight: bolder;
+    margin-left: 15px;
+}

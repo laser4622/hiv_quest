@@ -1,11 +1,13 @@
 import React, {useEffect, useState, useRef} from 'react';
 import "./TimeChoice.css"
 import ActivityButton from "../../components/ActivityButton";
+import appStore from "../../../store";
+import Bubble from "../../components/Bubble";
 
-const TimeChoice = ({ options, timeToAnswerInSeconds, defaultAnswer, callback }) => {
+const TimeChoice = () => {
     const intervalRef = useRef();
 
-    const [time, setTime] = useState(timeToAnswerInSeconds);
+    const [time, setTime] = useState(appStore.activity.time);
 
     useEffect(()=>{
         setTimeout(() => {
@@ -14,30 +16,31 @@ const TimeChoice = ({ options, timeToAnswerInSeconds, defaultAnswer, callback })
                     return state-1
                 });
             }, 1000)
-        }, 3100)
+        }, 1100)
         return () =>{
             clearInterval(intervalRef.current)
         }
     }, [])
 
     useEffect(()=>{
-        if(time === 0) {
-            callback(defaultAnswer)
+        if(time === -1) {
+            appStore.getNextStatus({answer: appStore.activity.default })
             clearInterval(intervalRef.current)
         }
     },[time])
 
     return (
         <div key="timeChoice" className="TimeChoice">
-            {options.map((option, index)=> (
+            <Bubble position={appStore.position} text={appStore.activity.text}/>
+            {appStore.activity.options.map((option, index)=> (
                 <ActivityButton
                     key={index}
-                    onClick={()=>{clearInterval(intervalRef.current);callback(option)}}
+                    onClick={()=>{clearInterval(intervalRef.current);appStore.getNextStatus({answer: option })}}
                     title={option}
                 />
             ))}
             <span className="TimeChoice-timer_border">
-                <div style={{width: `${Math.floor(time/timeToAnswerInSeconds*100)}%`}}>
+                <div style={{width: `${Math.floor(time/appStore.activity.time*100)}%`}}>
                 </div>
             </span>
         </div>

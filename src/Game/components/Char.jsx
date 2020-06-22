@@ -4,10 +4,10 @@ const Char = ({position='left', src}) => {
     return(
         <img
             src={src}
-            // style={{backgroundImage: '/boy.png'}}
+            // style={{backgroundImage: '/bortsov.png'}}
             className={`Char ${position}`}>
 
-            {/*<img src={'/boy.png'}/>*/}
+            {/*<img src={'/bortsov.png'}/>*/}
 
         </img>
     )

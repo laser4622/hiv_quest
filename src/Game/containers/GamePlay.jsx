@@ -7,8 +7,8 @@ import { observer } from "mobx-react"
 
 
 const chars = {
-    boy: '/boy.png',
-    girl: '/girl.png',
+    boy: '/bortsov.png',
+    girl: '/kraskovskaya.png',
 };
 
 const GamePlay = () => {

@@ -26,3 +26,11 @@
 .Checklist div:nth-child(4){
     animation-delay: 2.6s; /* Задержка перед началом */
 }
+
+.Checklist div:nth-child(5){
+    animation-delay: 3.1s; /* Задержка перед началом */
+}
+
+.Checklist div:nth-child(6){
+    animation-delay: 3.6s; /* Задержка перед началом */
+}

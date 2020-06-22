@@ -1,11 +1,11 @@
 
 .Bubble {
+    font-size: calc(90vh/16*9 * 0.04);
+    font-weight: 700;
     /*position: absolute;*/
     background: white;
     border-radius: .4em;
     margin-bottom: 8px;
-
-    font-size: medium;
 
     /*max-width: calc(69% - 32px);*/
 
@@ -53,6 +53,10 @@
 .Bubble.left:after {
     left: 10px;
     border-left: 0;
+}
+
+.Bubble.null:after {
+    display: none;
 }
 
 @keyframes show{

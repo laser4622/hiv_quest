@@ -15,6 +15,11 @@ const Activity = () => {
             case 'dialog': return <Dialog/>
             case 'radio': return <Radio/>
             case 'checklist': return <Checklist/>
+            case 'timechoice': return <TimeChoice/>
+            case 'letter': return <DetailedResponse/>
+            case null: return <div
+                style={{position:'fixed', width: '100%', height: '100%', background:'transparent', top: 0, left: 0}}
+                onClick={()=>appStore.getNextStatus()}> </div>
             default: return ''
         }
     }
