@@ -8,14 +8,14 @@ import { observer } from "mobx-react"
 
 const chars = {
     boy: '/bortsov.png',
-    girl: '/kraskovskaya.png',
+    girl: '/kraskovskaya_neutral.png',
 };
 
 const GamePlay = () => {
     return (
         <>
             <Activity />
-            <Char position={appStore.position} src={`${appStore.currentChar}.png`}/>
+            <Char position={appStore.position} src={`${appStore.currentChar}_${appStore.emotion}.png`}/>
         </>
     )
 };

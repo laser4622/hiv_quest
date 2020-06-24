@@ -3,6 +3,14 @@
     /*width: 55%;*/
     z-index: 1;
     position:absolute;
+
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+
+    visibility: visible !important;
 }
 
 .Char.right{
@@ -11,14 +19,6 @@
     transform: scaleX(-1);
 
     animation-name: slideLeft;
-
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-
-    visibility: visible !important;
 }
 
 
@@ -49,14 +49,6 @@
     right: 45%;
     animation-name: slideRight;
     -webkit-animation-name: slideRight;
-
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-
-    animation-timing-function: ease-in-out;
-    -webkit-animation-timing-function: ease-in-out;
-
-    visibility: visible !important;
 }
 
 @keyframes slideRight {
