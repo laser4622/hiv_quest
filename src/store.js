@@ -4,6 +4,7 @@ import {getStatus, gameLogin, chooseChar, getReset, getNext} from "./api";
 
 class AppStore {
     token = '';
+    finishTime = 0;
     activity = null;
     position = '';
     currentChar = null;
@@ -31,6 +32,10 @@ class AppStore {
         this.score = status.score;
         this.position = status.position;
         this.background = status.background;
+
+        if(this.currentStep==="finish") {
+            this.finishTime = status.finishTime;
+        }
     }
 
     getNextStatus = async (option={}) => {
@@ -62,7 +67,8 @@ decorate(AppStore, {
     activity: observable,
     position: observable,
     updateStatus: action,
-    currentChar: observable
+    currentChar: observable,
+    currentStep: observable,
 });
 
 const appStore = new AppStore();

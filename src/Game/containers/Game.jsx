@@ -9,6 +9,7 @@ import FinishScreen from "./UI/FinishScreen";
 import Captions from "./UI/Сaptions";
 import GamePlay from "./GamePlay";
 import Points from "../components/Points";
+import BeginScreen from "./UI/BeginScreen";
 
 
 
@@ -27,7 +28,10 @@ const Game = () => {
 
     const getContent = () => {
         switch (appStore.currentStep) {
-            case '0': return <CharSelection/>
+            case 'chooseScreen': return <CharSelection/>
+            case 'captions': return <Captions/>
+            case 'finish': return <FinishScreen/>
+            case 'start': return <BeginScreen/>
             default: return <GamePlay/>
         }
     }
@@ -40,7 +44,7 @@ const Game = () => {
                 style={{backgroundImage: `url('/${appStore.background}')`}}
                 // onClick={appStore.updateStatus}
             >
-                {appStore.currentStep!=='0'&&<Points/>}
+                {appStore.currentStep>0&&<Points/>}
                 {
                     !updating && getContent()
                 }
