@@ -17,15 +17,15 @@
     align-items: flex-start;
 }
 
-.Login input {
-    font-size: calc(90vh / 16 * 9 * 0.05);
-    outline: none;
-    border: none;
-    height: 10%;
-    padding: 25px;
-    border-radius: 10em;
-    width: 50%;
-}
+/*.Login  input {*/
+/*    font-size: calc(90vh / 16 * 9 * 0.05);*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    height: 10%;*/
+/*    padding: 25px;*/
+/*    border-radius: 10em;*/
+/*    width: 50%;*/
+/*}*/
 
 .Login form {
     margin-top: 50%;
