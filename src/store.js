@@ -12,6 +12,7 @@ class AppStore {
     score = 0;
     background = '';
     availableChars = {};
+    emotion = 'neutral';
 
 
     async login(phone) {
@@ -32,9 +33,10 @@ class AppStore {
         this.score = status.score;
         this.position = status.position;
         this.background = status.background;
+        this.emotion = status.emotion || 'neutral';
 
         if(this.currentStep==="finish") {
-            this.finishTime = status.finishTime;
+            this.finishTime = status.time;
         }
     }
 
@@ -69,6 +71,7 @@ decorate(AppStore, {
     updateStatus: action,
     currentChar: observable,
     currentStep: observable,
+    emotion: observable
 });
 
 const appStore = new AppStore();
