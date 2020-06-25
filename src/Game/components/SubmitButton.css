@@ -1,0 +1,14 @@
+.SubmitButton {
+    position: absolute;
+    bottom: -70%;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 6% 10%;
+    color: white;
+    font-weight: bolder;
+    font-size: calc(90vmax/16*9 * 0.08);
+    background-color: transparent;
+    background-image: url("/ButtonPlayGreen.png");
+}
