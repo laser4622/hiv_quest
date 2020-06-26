@@ -49,7 +49,7 @@ const Login = (props) => {
                              {(inputProps) => <input id="login-code" required {...inputProps}/>}
                          </Input>
 
-                            <SubmitButton text="Войти" onClick={()=>console.log('asd')}/>
+                            <SubmitButton text="Войти"/>
                             <div onClick={()=>setHintVisible(!hintVisible)} className="Login-help">Помощь</div>
                             {hintVisible&&
                             <div className="Login-help_hint">Если вам не пришло смс-сообщение с кодом, то свяжитесь с нами.</div>}
