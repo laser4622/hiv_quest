@@ -15,7 +15,3 @@
     src: local("☺"), url("/Nunito/Nunito-Black.ttf") format("truetype");
     font-weight: 900;
 }
-
-body {
-    background: black;
-}

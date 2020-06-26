@@ -19,3 +19,10 @@
 .Activity.null {
     left: 15%;
 }
+
+.Activity.letter {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}

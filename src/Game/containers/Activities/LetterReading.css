@@ -1,0 +1,15 @@
+.LetterReading {
+    padding: 20%;
+    height: 65%;
+}
+
+.LetterReading-letter_text {
+    font-size: calc(90vh/16*9 * 0.05);
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: transparent;
+    height: 100%;
+    word-break: break-all;
+    overflow: auto;
+}

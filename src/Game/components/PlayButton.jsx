@@ -3,9 +3,9 @@ import appStore from "../../store";
 
 import './PlayButton.css'
 
-const PlayButton = ({onClick, children}) => {
+const PlayButton = ({onClick, children, style}) => {
     return (
-        <span className="PlayButton" onClick={onClick}>
+        <span style={style} className="PlayButton" onClick={onClick}>
             <span className="PlayButton_text">{children}</span>
         </span>
     )
