@@ -81,3 +81,14 @@
     margin-top: -10px;
     top: .4em;
 }
+
+
+@media (max-width: 440px) {
+
+    .Login{
+        margin: calc(50vh - 50vw/9*16) 0;
+        height: calc(100vw/9*16);
+        width: 100vw;
+    }
+
+}
