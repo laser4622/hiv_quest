@@ -13,6 +13,7 @@ class AppStore {
     background = '';
     availableChars = {};
     emotion = 'neutral';
+    lock = false;
 
 
     async login(phone, code) {
@@ -22,11 +23,12 @@ class AppStore {
             this.setToken(token);
         } catch (e) {
             console.log(e);
+            throw new Error('error');
         }
     }
 
     setStatus = (status) => {
-        this.availableChars = status.availableChars
+        this.availableChars = status.availableChars;
         this.currentChar = status.char;
         this.activity = status.activity;
         this.currentStep = status.currentStep;
@@ -38,12 +40,20 @@ class AppStore {
         if (this.currentStep === "finish") {
             this.finishTime = status.time;
         }
-    }
+    };
+
+    setLock = async () => {
+        this.lock = true;
+        setTimeout(()=>{
+            this.lock = false;
+        },1000)
+    };
 
     getNextStatus = async (option = {}) => {
         try {
-
+            if(this.lock) return;
             this.setStatus((await getNext(option)).data);
+            this.setLock();
         } catch (e) {
             this.error(e);
         }
@@ -56,7 +66,9 @@ class AppStore {
 
     chooseChar = async (data) => {
         try {
-            this.setStatus((await chooseChar(data)).data)
+            if(this.lock) return;
+            this.setStatus((await chooseChar(data)).data);
+            this.setLock();
         } catch (e) {
             this.error(e);
         }
@@ -64,7 +76,9 @@ class AppStore {
 
     updateStatus = async () => {
         try {
+            if(this.lock) return;
             this.setStatus((await getStatus(this.token)).data);
+            this.setLock();
         } catch (e) {
             this.error(e);
         }

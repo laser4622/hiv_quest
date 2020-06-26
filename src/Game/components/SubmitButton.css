@@ -12,3 +12,7 @@
     background-color: transparent;
     background-image: url("/ButtonPlayGreen.png");
 }
+
+.SubmitButton:focus{
+    outline: none;
+}

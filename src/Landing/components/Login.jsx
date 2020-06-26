@@ -10,10 +10,17 @@ const Login = (props) => {
     const [value, setValue] = useState('');
     const [code, setCode] = useState('');
     const [hintVisible, setHintVisible] = useState(false);
+    const [error, setError] = useState(false);
 
     const onClick = async (e) => {
         e.preventDefault();
-        await appStore.login(value, code);
+        try {
+            await appStore.login(value, code);
+        }catch (e) {
+            console.log(e)
+            setCode('');
+            setError(true)
+        }
         // await appStore.updateStatus();
         // props.history.push('/game')
     };
@@ -38,7 +45,8 @@ const Login = (props) => {
 
                 <Input
                     mask="999-999"
-                    placeholder="Код из смс"
+                    value={code}
+                    placeholder={error?'Неверный код':"Код из смс"}
                     type="code"
                     pattern="{3}[\-]\d{3}"
                     minLength="6"
@@ -48,6 +56,8 @@ const Login = (props) => {
                     }}
                     hint={'код, который пришел вам в смс-сообщении'}
                     icon="/lockIcon.png"
+                    error={error}
+                    onClick={()=>{setError(false)}}
                 >
                     {(inputProps) => <input id="login-code" required {...inputProps}/>}
                 </Input>

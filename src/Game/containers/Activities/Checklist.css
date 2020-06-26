@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
 }
+
+
 .Checklist div{
     opacity:0; /*Элемент полностью прозрачный (невидимый)*/
     transition: 1s; /*Скорость перехода состояния элемента*/
@@ -12,25 +14,25 @@
 }
 
 .Checklist div:nth-child(1){
-    animation-delay: 1.4s; /* Задержка перед началом */
+    animation-delay: 0.5s; /* Задержка перед началом */
 }
 
 .Checklist div:nth-child(2){
-    animation-delay: 1.8s; /* Задержка перед началом */
+    animation-delay: 0.75s; /* Задержка перед началом */
 }
 
 .Checklist div:nth-child(3){
-    animation-delay: 2.2s; /* Задержка перед началом */
+    animation-delay: 1s; /* Задержка перед началом */
 }
 
 .Checklist div:nth-child(4){
-    animation-delay: 2.6s; /* Задержка перед началом */
+    animation-delay: 1.25s; /* Задержка перед началом */
 }
 
 .Checklist div:nth-child(5){
-    animation-delay: 3.1s; /* Задержка перед началом */
+    animation-delay: 1.5s; /* Задержка перед началом */
 }
 
 .Checklist div:nth-child(6){
-    animation-delay: 3.6s; /* Задержка перед началом */
+    animation-delay: 1.75s; /* Задержка перед началом */
 }

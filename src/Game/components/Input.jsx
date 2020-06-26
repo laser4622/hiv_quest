@@ -3,7 +3,7 @@ import './Input.css';
 import InputMask from "react-input-mask";
 
 const Input = (params) => {
-    const {icon, hint} = params;
+    const {icon, hint, error} = params;
 
 
     return (
@@ -11,9 +11,17 @@ const Input = (params) => {
             {icon&&<img className="Input__icon" src={icon}/>}
 
             <InputMask
+
+                style={error?{
+                    border: '1px solid red',
+                }:{}}
                 {...params}
             >
-                {(inputProps) => <input id="login-tel" required {...inputProps} type="tel"/>}
+                {(inputProps) => <input
+                    id="login-tel"
+                    required
+                    {...inputProps}
+                    type="tel"/>}
             </InputMask>
 
 
