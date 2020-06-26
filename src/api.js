@@ -1,6 +1,6 @@
 import axios from 'axios';
 import appStore from "./store";
-export const baseURL = 'http://192.168.0.249:8080/api';
+export const baseURL = 'http://172.20.10.3:8080/api';
 
 export const accessCode = (code, redirectURL) => axios({
     method: 'POST',

@@ -35,26 +35,46 @@ class AppStore {
         this.background = status.background;
         this.emotion = status.emotion || 'neutral';
 
-        if(this.currentStep==="finish") {
+        if (this.currentStep === "finish") {
             this.finishTime = status.time;
         }
     }
 
-    getNextStatus = async (option={}) => {
-        this.setStatus( (await getNext(option)).data );
+    getNextStatus = async (option = {}) => {
+        try {
 
-    }
+            this.setStatus((await getNext(option)).data);
+        } catch (e) {
+            this.error(e);
+        }
+
+    };
 
     resetGame = async () => {
         this.setStatus((await getReset()).data)
-    }
+    };
 
     chooseChar = async (data) => {
-        this.setStatus((await chooseChar(data)).data)
-    }
+        try {
+            this.setStatus((await chooseChar(data)).data)
+        } catch (e) {
+            this.error(e);
+        }
+    };
 
     updateStatus = async () => {
-        this.setStatus((await getStatus(this.token)).data);
+        try {
+            this.setStatus((await getStatus(this.token)).data);
+        } catch (e) {
+            this.error(e);
+        }
+    };
+
+    error = (e) => {
+        if (e.response && e.response.status===403){
+            this.token = null;
+            Cookie.remove('token')
+        }
     };
 
 
@@ -71,7 +91,10 @@ decorate(AppStore, {
     updateStatus: action,
     currentChar: observable,
     currentStep: observable,
-    emotion: observable
+    emotion: observable,
+    error: action,
+    token: observable
+
 });
 
 const appStore = new AppStore();
