@@ -55,7 +55,7 @@
 }
 
 .Login-help_hint {
-    font-size: calc(90vmax/16*9 * 0.03);
+    font-size: calc(90vh/16*9 * 0.03);
     top: 210%;
     padding: 16px;
     border-radius: 10px;

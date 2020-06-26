@@ -8,7 +8,7 @@
     padding: 6% 10%;
     color: white;
     font-weight: bolder;
-    font-size: calc(90vmax/16*9 * 0.08);
+    font-size: calc(90vh/16*9 * 0.08);
     background-color: transparent;
     background-image: url("/ButtonPlayGreen.png");
 }
