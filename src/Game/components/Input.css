@@ -36,6 +36,23 @@
     transform: scale(1.1,1.1);
 }
 
+
+
+.Input__hint_text:after {
+    left: 65%;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: rgb(238, 236, 237);
+    border-top: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+    top: .4em;
+}
+
+
 .Input__hint_text{
     position: absolute;
     /*min-height: 80px;*/
@@ -47,9 +64,8 @@
     width: 50%;
 
     right: calc(24px - 20%);
-    overflow: hidden;
 
-    background: white;
+    background: rgb(238, 236, 237);
 
     visibility: hidden;
     text-align: center;

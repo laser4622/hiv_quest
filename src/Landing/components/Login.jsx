@@ -11,9 +11,10 @@ const Login = (props) => {
     const [code, setCode] = useState('');
     const [hintVisible, setHintVisible] = useState(false);
 
-    const onClick = async () => {
-        await appStore.login(value);
-        await appStore.updateStatus()
+    const onClick = async (e) => {
+        e.preventDefault();
+        await appStore.login(value, code);
+        await appStore.updateStatus();
 
         props.history.push('/game')
     };
@@ -21,7 +22,7 @@ const Login = (props) => {
     return (
         <div className="Login"
                      >
-                        <form onSubmit={()=>console.log('qwe')}>
+                        <form action={null} onSubmit={onClick}>
                          <Input
                              mask="+7\ (999) 999-99-99"
                              placeholder="Номер телефона"

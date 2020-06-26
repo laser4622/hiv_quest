@@ -15,9 +15,9 @@ class AppStore {
     emotion = 'neutral';
 
 
-    async login(phone) {
+    async login(phone, code) {
         try {
-            const token = (await gameLogin({phone})).data;
+            const token = (await gameLogin({phone, code})).data;
             Cookie.set("token", token);
             this.setToken(token);
         } catch (e) {
