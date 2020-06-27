@@ -79,7 +79,7 @@ const Register = (props) => {
     return (registerIsEnd ?
             <div className="register-form-success-end">
                 <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы
-                успешно зарегистрированы.<br/> <br/>Ждём вас 25 июня! Мы обязательно напомним вам о начале квеста.
+                успешно зарегистрированы.<br/> <br/>Ждём вас 1 июля! Мы обязательно напомним вам о начале квеста.
             </div> :
             <div className="register-form">
                 <form onSubmit={(e) => sendDataToServer(e)} ref={formElement}>

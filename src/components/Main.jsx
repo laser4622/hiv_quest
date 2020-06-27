@@ -34,7 +34,7 @@ const Main = () => {
                         Прими участие в <br/> онлайн-квесте
                         </span>
                         <div className="main-container__header-invite_date">
-                            с 25 по 28 июня
+                            с 1 по 5 июля
                         </div>
                         <VkRegisterButton/>
                     </div>
