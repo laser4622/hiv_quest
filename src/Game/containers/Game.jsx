@@ -20,7 +20,7 @@ const Game = () => {
         setTimeout(() => {
             setUpdating(false);
         }, 100);
-    }, [appStore.position, appStore.currentChar]);
+    }, [appStore.position, appStore.currentChar, appStore.background]);
 
     useEffect(()=>{
         appStore.updateStatus();
