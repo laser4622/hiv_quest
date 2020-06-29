@@ -50,6 +50,10 @@
     border-right: 0;
 }
 
+.Bubble.center:after {
+    display: none;
+}
+
 .Bubble.left:after {
     left: 10px;
     border-left: 0;

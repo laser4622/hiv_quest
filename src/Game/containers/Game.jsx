@@ -41,7 +41,7 @@ const Game = () => {
             <button onClick={()=>appStore.resetGame()}>RESET</button>
             <div
                 className="Game__Main"
-                style={{backgroundImage: `url('/${appStore.background}')`}}
+                style={{backgroundImage: `url('https://api.goquest.online/${appStore.background}')`}}
                 // onClick={appStore.updateStatus}
             >
                 {appStore.currentStep>0&&<Points/>}

@@ -15,7 +15,7 @@ const GamePlay = () => {
     return (
         <>
             <Activity />
-            {appStore.currentChar !== 'nobody'&&<Char position={appStore.position} src={`${appStore.currentChar}_${appStore.emotion}.png`}/>}
+            {appStore.currentChar !== 'nobody'&&<Char position={appStore.position} src={`https://api.goquest.online/${appStore.currentChar}_${appStore.emotion}.png`}/>}
         </>
     )
 };
