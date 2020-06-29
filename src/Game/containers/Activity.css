@@ -24,6 +24,11 @@
     left: 15%;
 }
 
+.Activity.crowd {
+    left: 15%;
+    margin-top: 30%;
+}
+
 .Activity.letter {
     max-width: 100%;
     width: 100%;
