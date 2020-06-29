@@ -65,7 +65,7 @@ const Login = (props) => {
                 <SubmitButton text="Войти"/>
                 <div onClick={() => setHintVisible(!hintVisible)} className="Login-help">Помощь</div>
                 {hintVisible &&
-                <div className="Login-help_hint">Если вам не пришло смс-сообщение с кодом, то свяжитесь с нами.</div>}
+                <div className="Login-help_hint">Если вам не пришло смс-сообщение с кодом, то свяжитесь с нами. Почта: feddot2517@gmail.com. <br/>Телефон: <a href="tel:+79994598334">+7 999-459-83-34</a></div>}
             </form>
 
         </div>

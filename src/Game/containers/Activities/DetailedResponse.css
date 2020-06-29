@@ -10,6 +10,7 @@
     box-sizing: border-box;
     border: none;
     font-size: calc(90vh/16*9 * 0.05);
+    font-family: Nunito, serif ;
 }
 
 .DetailedResponse textarea:focus {

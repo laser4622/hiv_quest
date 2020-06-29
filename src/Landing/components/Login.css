@@ -56,11 +56,11 @@
 
 .Login-help_hint {
     font-size: calc(90vh/16*9 * 0.03);
-    top: 210%;
+    top: 200%;
     padding: 16px;
     border-radius: 10px;
     background: rgb(238, 236, 237);
-    width: 40%;
+    width: 50%;
     color:  #163e58;
     position: absolute;
     text-align: center;
