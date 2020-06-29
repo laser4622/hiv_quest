@@ -80,7 +80,7 @@ const Register = (props) => {
     return (registerIsEnd ?
             <div className="register-form-success-end">
                 <span className="register-form-success-end-greetings">Поздравляем!</span> <br/><br/> Вы
-                успешно зарегистрированы.<br/> <br/>Ждём вас 25 июня! Мы обязательно напомним вам о начале квеста.
+                успешно зарегистрированы.<br/> <br/>Ждём вас 1 июля! Мы обязательно напомним вам о начале квеста.
             </div> :
             <div className="register-form">
                 <form onSubmit={(e) => sendDataToServer(e)} ref={formElement}>
@@ -101,6 +101,18 @@ const Register = (props) => {
                         minLength="18"
                         required
                     />
+                    <InputMask
+                        mask="999-999"
+                        placeholder="Код пароль"
+                        name="code"
+                        pattern="\d{3}[\-]\d{3}"
+                        minLength="7"
+                    >
+                        {(inputProps) => <input id="tel" required {...inputProps}/>}
+                    </InputMask>
+
+
+
                     <span className="register-form_error-phone">
                             {registerError}
                     </span>
@@ -119,8 +131,11 @@ const Register = (props) => {
                     Если вы укажете некорректные данные при регистрации, в случае победы не сможете получить приз.
                     <br/>
                     <br/>
-                    Мы пришлём вам всего 2 СМС. Первое - когда начнется квест, второе - если вы займёте призовое
+                    Мы пришлём вам всего 1 СМС - если вы займёте призовое
                     место. После окончания квеста все ваши данные будут уничтожены.
+                    <br/>
+                    <br/>
+                    Квест будет доступен на этой странице с 1 по 5 июля. Доступ будет предоставлен после ввода номера телефона и пароля, пожалуйста не забудте его.
 
                 </div>
             </div>
