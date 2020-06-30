@@ -15,7 +15,7 @@ const FinishScreen = ({}) => {
         <div className="FinishScreen">
             <div>Спасибо за уделённое время!</div>
             <div
-                style={{position:'fixed', width: '100%', height: '100%', background:'transparent', top: 0, left: 0}}
+                style={{position:'fixed', width: '100%', height: '80%', background:'transparent', top: 0, left: 0}}
                 onClick={()=>appStore.getNextStatus()}> </div>
             <div className="FinishScreen-image"><img src="/heart.png" alt="heart"/></div>
             <div className="FinishScreen-points">
