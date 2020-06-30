@@ -34,7 +34,7 @@ const CharSelection = () => {
                     accessible={appStore.availableChars.virus}
                     selected={selected}
                     setSelected={setSelected}
-                    description="Вирус СПИД"
+                    description="Вирус"
                     charName="virus"/>
 
                 <span className={`CharSelection-select_play ${selected?'':'disabled'}`} onClick={handlePlay}>

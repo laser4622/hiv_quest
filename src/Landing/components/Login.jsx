@@ -3,6 +3,7 @@ import InputMask from "react-input-mask";
 import {gameLogin, getStatus} from "../../api";
 import appStore from "../../store";
 import './Login.css'
+import { withRouter } from "react-router-dom";
 import Input from "../../Game/components/Input";
 import SubmitButton from "../../Game/components/SubmitButton";
 
@@ -61,7 +62,7 @@ const Login = (props) => {
                 >
                     {(inputProps) => <input id="login-code" required {...inputProps}/>}
                 </Input>
-
+                <div className="Login-regiter_link" onClick={()=>props.history.push('/register')}>Регистрация</div>
                 <SubmitButton text="Войти"/>
                 <div onClick={() => setHintVisible(!hintVisible)} className="Login-help">Помощь</div>
                 {hintVisible &&
@@ -72,4 +73,4 @@ const Login = (props) => {
     )
 };
 
-export default Login;
+export default withRouter(Login);

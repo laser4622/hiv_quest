@@ -26,7 +26,9 @@ const FinishScreen = ({}) => {
                 За
                 <div className="FinishScreen-time_amount">{appStore.finishTime!==0&&format(appStore.finishTime)}</div>
             </div>
-            <div>Ждем подведения итогов</div>
+            <div className="FinishScreen-wait">
+                В течение 5 дней мы огласим результаты и опубликуем список победителей по этому же адресу.
+            </div>
             <div className="FinishScreen-observe">
                 Следите за нами:
                 <div className="FinishScreen-observe_vk">

@@ -15,11 +15,12 @@ const BaseRouter = () => (
         <Route exact path='/register' component={Register}/>
 
         <Route exact path='/login'>
+                <div className="back" style={{background: '#29436c'}}/>
             {appStore.token?<Redirect to="/game" />:<Login/>}
         </Route>
 
         <Route exact path='/game'>
-                <div className="back"/>
+                <div className="back" style={{background: '#29436c'}}/>
                 {appStore.token?<Game/>:<Redirect to="/login" /> }
 
         </Route>

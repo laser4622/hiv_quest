@@ -8,7 +8,7 @@
     color: #3e6980;
     font-weight: bolder;
     justify-content: space-around;
-    font-size: 20pt;
+    font-size: calc(90vh/16*9 * 0.05);
     text-align: center;
 }
 
@@ -38,6 +38,11 @@
     max-width: 90%;
 }
 
+
+.FinishScreen-wait {
+    width: 60%;
+    font-size: calc(90vh/16*9 * 0.04);
+}
 .FinishScreen-points_amount {
     margin-top: 8px;
     /*width: 220px;*/
