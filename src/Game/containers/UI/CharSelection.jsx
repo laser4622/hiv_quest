@@ -15,7 +15,7 @@ const CharSelection = () => {
     return (
         <div className="CharSelection">
             <div className="CharSelection-invite">
-                <span>Выбери за кого будешь играть</span>
+                <span>Выбери, за кого будешь играть</span>
             </div>
             <div className="CharSelection-select">
                 <CharButton
