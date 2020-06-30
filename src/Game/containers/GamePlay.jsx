@@ -6,16 +6,16 @@ import CharSelection from "./UI/CharSelection";
 import { observer } from "mobx-react"
 
 
-const chars = {
-    boy: '/bortsov.png',
-    girl: '/kraskovskaya_neutral.png',
-};
 
 const GamePlay = () => {
     return (
         <>
             <Activity />
-            {appStore.currentChar !== 'nobody'&&<Char position={appStore.position} src={`https://api.goquest.online/${appStore.currentChar}_${appStore.emotion}.png`}/>}
+            {appStore.currentChar !== 'nobody'&&
+            <Char
+                position={appStore.position}
+                name={appStore.charName}
+                src={`https://api.goquest.online/${appStore.currentChar}_${appStore.emotion}.png`}/>}
         </>
     )
 };

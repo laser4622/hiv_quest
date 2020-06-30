@@ -54,7 +54,9 @@ const images = [
     'yard.png',
     'girlRoom.png',
     'lena_neutral.png',
-    'schoolMicro.png'
+    'schoolMicro.png',
+    'letterNohands.png',
+    'letterBackground.png'
 ]
 
 const App = () => {
