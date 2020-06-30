@@ -8,7 +8,7 @@ import Bubble from "../../components/Bubble";
 const Radio = () => {
     return (
             <div className="Radio">
-                <Bubble position={appStore.position} text={appStore.activity.text}/>
+                <Bubble position={appStore.position} text={appStore.activity.text}  name={appStore.charName}/>
                 {appStore.activity.options.map(option=> (
                     <ActivityButton onClick={()=>appStore.getNextStatus({answer: option})} title={option}/>
                 ))}

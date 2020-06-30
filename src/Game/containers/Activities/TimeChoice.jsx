@@ -31,7 +31,7 @@ const TimeChoice = () => {
 
     return (
         <div key="timeChoice" className="TimeChoice">
-            <Bubble position={appStore.position} text={appStore.activity.text}/>
+            <Bubble position={appStore.position} text={appStore.activity.text}  name={appStore.charName}/>
             {appStore.activity.options.map((option, index)=> (
                 <ActivityButton
                     key={index}

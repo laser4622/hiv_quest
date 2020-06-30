@@ -2,18 +2,44 @@ import {observable, action, autorun, decorate, computed} from 'mobx'
 import Cookie from "js-cookie"
 import {getStatus, gameLogin, chooseChar, getReset, getNext} from "./api";
 
+// Лена lena
+// Ведущий moderator
+// Доктор doctor
+// Мама mom
+// Вирус virus
+const chars = {
+    bortsov: 'Саша Борцов',
+    kraskovskaya: 'Саша Красковская',
+    lena: 'Лена',
+    doctor: 'Доктор',
+    mom: 'Мама',
+    virus: 'Вирус',
+    moderator: 'Ведущий',
+};
+
+
 class AppStore {
     token = '';
     finishTime = 0;
     activity = null;
     position = '';
-    currentChar = null;
+    currentChar = '';
     currentStep = '0';
     score = 0;
     background = '';
     availableChars = {};
     emotion = 'neutral';
     lock = false;
+
+    get charName(){
+        for (const char of Object.keys(chars)) {
+
+            console.log(char,this.currentChar, this.currentChar.includes(char))
+            if(this.currentChar && this.currentChar.includes(char))
+                return chars[char];
+        }
+        return '';
+    }
 
 
     async login(phone, code) {
@@ -100,6 +126,7 @@ class AppStore {
 
 decorate(AppStore, {
     isRight: observable,
+    background: observable,
     activity: observable,
     position: observable,
     updateStatus: action,
@@ -107,7 +134,8 @@ decorate(AppStore, {
     currentStep: observable,
     emotion: observable,
     error: action,
-    token: observable
+    token: observable,
+    charName: computed
 
 });
 

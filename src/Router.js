@@ -19,7 +19,9 @@ const BaseRouter = () => (
         </Route>
 
         <Route exact path='/game'>
-            {appStore.token?<Game/>:<Redirect to="/login" /> }
+                <div className="back"/>
+                {appStore.token?<Game/>:<Redirect to="/login" /> }
+
         </Route>
     </div>
 );

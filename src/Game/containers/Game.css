@@ -1,7 +1,7 @@
 .Game__Main{
-    margin: 5vh auto;
-    height: 90vh;
-    width: calc(90vh/16*9);
+    margin: 2vh auto;
+    height: 96vh;
+    width: calc(96vh/16*9);
     /*background: #CDF5FE;*/
     background-image: url('/backstage1.png');
     /*background-position: co;*/
@@ -15,10 +15,21 @@
     display: flex;
     position: relative;
     align-items: flex-end;
+    border: 4px solid #29436c;
+    border-radius: 4px;
 }
 
 
-.Game{
+.back{
+    background-image: url("/back.png");
+    /*background-size: cover;*/
+    background-repeat: repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -10;
+    top: 0;
+    left: 0;
     /*display: flex;*/
 }
 
@@ -29,10 +40,8 @@
         margin: calc(50vh - 50vw/9*16) 0;
         height: calc(100vw/9*16);
         width: 100vw;
-    }
-
-    .Game__Side{
-        display: none;
+        border: none;
+        border-radius: 0;
     }
 
 }

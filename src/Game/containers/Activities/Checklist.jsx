@@ -30,7 +30,7 @@ const Checklist = ({callback }) => {
 
     return (
         <div className="Checklist">
-            <Bubble position={appStore.position} text={appStore.activity.text}/>
+            <Bubble position={appStore.position} text={appStore.activity.text}  name={appStore.charName}/>
             {appStore.activity.options.map(option=> (
                 <ActivityButton
                 onClick={()=>handleSelect(option)}
