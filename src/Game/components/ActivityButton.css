@@ -13,6 +13,8 @@
     align-self: center;
     padding: 4px 0;
     margin-left: -4px;
+
+    cursor: pointer;
 }
 
 .ActivityButton.selected{

@@ -125,6 +125,7 @@ class AppStore {
 
 decorate(AppStore, {
     isRight: observable,
+    score: observable,
     background: observable,
     activity: observable,
     position: observable,
