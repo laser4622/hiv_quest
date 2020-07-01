@@ -10,16 +10,14 @@ import {observer} from "mobx-react";
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/' component={Main}/>
-
         <Route exact path='/register' component={Register}/>
 
         <Route exact path='/login'>
                 <div className="back" style={{background: '#29436c'}}/>
-            {appStore.token?<Redirect to="/game" />:<Login/>}
+            {appStore.token?<Redirect to="/" />:<Login/>}
         </Route>
 
-        <Route exact path='/game'>
+        <Route exact path='/'>
                 <div className="back" style={{background: '#29436c'}}/>
                 {appStore.token?<Game/>:<Redirect to="/login" /> }
 
