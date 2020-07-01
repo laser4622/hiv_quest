@@ -34,7 +34,6 @@ class AppStore {
     get charName(){
         for (const char of Object.keys(chars)) {
 
-            console.log(char,this.currentChar, this.currentChar.includes(char))
             if(this.currentChar && this.currentChar.includes(char))
                 return chars[char];
         }
