@@ -47,7 +47,7 @@ const Login = (props) => {
                 <Input
                     mask="999-999"
                     value={code}
-                    placeholder={error?'Неверный код':"Код из смс"}
+                    placeholder={error?'Неверный код':"Код"}
                     type="code"
                     pattern="{3}[\-]\d{3}"
                     minLength="6"
@@ -55,7 +55,7 @@ const Login = (props) => {
                     onChange={(e) => {
                         setCode(e.target.value)
                     }}
-                    hint={'код, который пришел вам в смс-сообщении'}
+                    hint={'Код, который пришел вам в смс-сообщении. Если смс не пришло, используется пароль который вы указывали при регистрации'}
                     icon="/lockIcon.png"
                     error={error}
                     onClick={()=>{setError(false)}}

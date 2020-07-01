@@ -56,14 +56,13 @@
 .Input__hint_text{
     position: absolute;
     /*min-height: 80px;*/
-    border-radius: 20em;
     padding: 16px;
 
     top: calc(100% + 8px);
 
     width: 50%;
 
-    right: calc(24px - 20%);
+    right: 0;
 
     background: rgb(238, 236, 237);
 
