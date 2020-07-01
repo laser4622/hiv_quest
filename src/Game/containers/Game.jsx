@@ -38,7 +38,6 @@ const Game = () => {
 
     return (
         <div className="Game">
-            <button onClick={()=>appStore.resetGame()}>RESET</button>
             <div
                 className="Game__Main"
                 style={{backgroundImage: `url('https://api.goquest.online/${appStore.background}')`}}
