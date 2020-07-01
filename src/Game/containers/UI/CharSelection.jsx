@@ -28,7 +28,7 @@ const CharSelection = () => {
                     accessible={appStore.availableChars.boy}
                     selected={selected}
                     setSelected={setSelected}
-                    description="Саша Борцов, зараженный человек"
+                    description="Саша Борцов, инфицированый человек"
                     charName="boy"/>
                 <CharButton
                     accessible={appStore.availableChars.virus}
