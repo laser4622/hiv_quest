@@ -3,6 +3,7 @@ import InputMask from 'react-input-mask'
 import {accessCode, sendRegisterDataToServer} from "../../api";
 import './Register.css'
 import {redirect_url} from "../../variables";
+import appStore from "../../store";
 
 const PhoneNumberInput = (props) => {
     return (
@@ -57,7 +58,11 @@ const Register = (props) => {
             data[key] = value
         });
         sendRegisterDataToServer(data).then(res => {
-            setRegisterIsEnd(true);
+            // setRegisterIsEnd(true);
+            appStore.login(data.phone, data.code).then(res => {
+                props.history.push('/');
+            }).catch(e => console.log(e))
+
         }).catch(err => {
             if (err.response) {
                 if(err.response.status === 403) {
