@@ -35,6 +35,13 @@
     /*display: flex;*/
 }
 
+.finalText{
+    text-align: center;
+    font-size: calc(90vh / 16 * 9 * 0.035);
+    margin: 0 auto 2vh auto;
+    font-weight: 700;
+}
+
 
 @media (max-width: 440px) {
 

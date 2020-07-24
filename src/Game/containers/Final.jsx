@@ -6,7 +6,12 @@ const Final = () => {
             <div
                 className="Game__Main"
                 style={{backgroundImage: 'url("/final.png")'}}
-                />
+            >
+                <p className="finalText">
+                    Спасибо всем! Ждем вас на следующий квест.<br/>
+                    <a href="https://vk.com/goquest.online" target="_blank">Вступайте в группу в ВК</a>, чтобы узнать, когда он начнется
+                </p>
+            </div>
         </div>
 
     )
