@@ -38,7 +38,6 @@ const Checklist = ({callback }) => {
                 title={option}
                 />
             ))}
-            {/*<button onClick={()=>console.log(selected)}>qwe</button>*/}
         </div>
     )
 };

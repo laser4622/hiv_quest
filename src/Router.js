@@ -7,21 +7,32 @@ import Login from "./Landing/components/Login";
 import Game from "./Game/containers/Game";
 import appStore from "./store";
 import {observer} from "mobx-react";
+import Final from "./Game/containers/Final";
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/register' component={Register}/>
 
-        <Route exact path='/login'>
-                <div className="back" style={{background: '#29436c'}}/>
-            {appStore.token?<Redirect to="/" />:<Login/>}
+        <Route exact path='/final'>
+            <div className="back" style={{background: '#29436c'}}/>
+            <Final/>
+        </Route>
+        <Route path='/'>
+            <Redirect to="/final"/>
         </Route>
 
-        <Route exact path='/'>
-                <div className="back" style={{background: '#29436c'}}/>
-                {appStore.token?<Game/>:<Redirect to="/login" /> }
 
-        </Route>
+
+        {/*<Route exact path='/register' component={Register}/>*/}
+
+        {/*<Route exact path='/login'>*/}
+        {/*    <div className="back" style={{background: '#29436c'}}/>*/}
+        {/*    {appStore.token ? <Redirect to="/"/> : <Login/>}*/}
+        {/*</Route>*/}
+
+        {/*<Route exact path='/'>*/}
+        {/*    <div className="back" style={{background: '#29436c'}}/>*/}
+        {/*    {appStore.token ? <Game/> : <Redirect to="/login"/>}*/}
+        {/*</Route>*/}
     </div>
 );
 
